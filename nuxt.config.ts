@@ -7,5 +7,9 @@ export default defineNuxtConfig({
           autoprefixer: {},
         },
     },
-    modules: ['nuxt-icon'],
+    modules: [
+        'nuxt-icon', 
+        '@pinia/nuxt',
+    ],
+    plugins: [{ src: './plugins/oruga.js' }]
 })

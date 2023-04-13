@@ -1,6 +1,16 @@
 <template>
-    <header>
+    <div>
         <h1>Footer</h1>
         <slot></slot>
-    </header>
+    </div>
 </template>
+
+<style scoped>
+    div {
+        background-color: #f0f0f0;
+        padding: 10px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+    }
+</style>
