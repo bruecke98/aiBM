@@ -1,12 +1,17 @@
 <template>
   <div :class="{ 'dark': isDark }" >
-    <Header>
+    <Header v-if="user">
       <button @click="toggleTheme" > 
         <span :class="{'hidden' : isDark}" ><Icon name="material-symbols:dark-mode" /></span>
         <span :class="{'hidden' : !isDark}" ><Icon name="solar:sun-2-broken" /></span>
       </button>
-    </Header>
-   
+    </Header >
+    <HeaderAuth v-else>
+      <button @click="toggleTheme" > 
+        <span :class="{'hidden' : isDark}" ><Icon name="material-symbols:dark-mode" /></span>
+        <span :class="{'hidden' : !isDark}" ><Icon name="solar:sun-2-broken" /></span>
+      </button>
+    </HeaderAuth >
 
     <NuxtLayout>
       <NuxtPage />
@@ -19,6 +24,10 @@
 
 <script setup lang="ts">
 
+const user = useSupabaseUser()
+console.log(
+  user
+)
 const isDark = ref(false)
 
 function toggleTheme() {

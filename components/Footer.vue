@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="mt-96">
         <h1>Footer</h1>
         <slot></slot>
     </div>

@@ -12,7 +12,7 @@
             </div>
             <!-- Navigation -->
             <div class="basis-1/4 ">
-                <div class="flex flex-row">
+                <div class="flex flex-row text-right">
                     <!-- <div  class="basis-1/4"  > <Icon name="carbon:finance" /> </div> -->
                     <div  class="basis-1/4"  ><slot class="basis-1/4"></slot> </div>
                     <!-- <div  class="basis-1/4"  ><Icon name="carbon:finance" /></div> -->
@@ -21,6 +21,11 @@
             </div>
         </div>
 </template>
+
+<script setup lang="ts">
+    const client = useSupabaseClient()
+    
+</script>
 
 <style scoped>
 .header {

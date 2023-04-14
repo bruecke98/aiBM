@@ -11,6 +11,7 @@ export default defineNuxtConfig({
         'nuxt-icon', 
         '@pinia/nuxt',
         '@nuxt/devtools',
+        '@nuxtjs/supabase'
     ],
     plugins: [{ src: './plugins/oruga.js' }]
 })
