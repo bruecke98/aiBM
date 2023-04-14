@@ -10,6 +10,7 @@ export default defineNuxtConfig({
     modules: [
         'nuxt-icon', 
         '@pinia/nuxt',
+        '@nuxt/devtools',
     ],
     plugins: [{ src: './plugins/oruga.js' }]
 })
