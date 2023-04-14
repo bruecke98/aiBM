@@ -1,17 +1,17 @@
 <template>
     <div class="flex flex-row  mt-40 ">
-        <Box class="basis-1/2 text-left text-3xl">
+        <Box class="basis-1/2 text-left text-3xl max-h-72">
             <h1>make</h1>
             <h1>better</h1>
             <h1>investments</h1>
         </Box>  
         <Box class="basis-1/2">
                 <AuthRegister v-if="reg" />
-                <Auth v-else />
+                <AuthLogin v-else />
                 <div>
                     <!-- <button @click="reg = true"><h1>Register</h1></button> -->
-                    <p class="mt-3 text-xs">You don't have an account yet?</p>
-                    <button @click="reg = !reg"><h1>Register</h1></button>
+                    <p class="text-xs inline-block">{{ !reg ? "You don't have an account yet? " : "You have an Account? "}} </p>
+                    <button class="inline-block text-sm underline" @click="reg = !reg"><h1>{{ !reg ? "Register" : "Login"}}</h1></button>
                 </div>
         </Box> 
     </div>

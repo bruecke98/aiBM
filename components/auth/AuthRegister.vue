@@ -2,44 +2,50 @@
       <form
         @submit.prevent="userRegister"
       >
-        <h2 >Register</h2>
+        <h2 class="text-left text-xl">Register</h2>
         <div >
-          <label for="email" class="text-sm leading-7 text-gray-400">Email</label>
+          <div>
+            <label for="email" class="text-sm leading-7 text-gray-400">Email</label>
+          </div>
           <input
             v-model="email"
             type="email"
             id="email"
             name="email"
-            class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8 text-gray-100 outline-none transition-colors duration-200 ease-in-out focus:border-[#42d392] focus:bg-transparent focus:ring-2 focus:ring-transparent"
+            class="w-3/4 bg-opacity-20 w-full rounded border border-gray-600  py-1 px-3  transition-colors duration-200 ease-in-out"
             required
           />
         </div>
         <div >
-          <label for="password" class="text-sm leading-7 text-gray-400">Password</label>
+          <div>
+            <label for="password" class="text-sm leading-7 text-gray-400">Password</label>
+          </div>
           <input
             v-model="password"
             type="password"
             id="password"
             name="password"
-            class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8 text-gray-100 outline-none transition-colors duration-200 ease-in-out focus:border-[#42d392] focus:bg-transparent focus:ring-2 focus:ring-transparent"
+            class="w-3/4 bg-opacity-20 w-full rounded border border-gray-600  py-1 px-3  transition-colors duration-200 ease-in-out"
             required
           />
         </div>
         <div>
-          <label for="confirmPassword" class="text-sm leading-7 text-gray-400"
-            >Confirm password</label
-          >
+          <div>
+            <label for="confirmPassword" class="text-sm leading-7 text-gray-400"
+              >Confirm password</label
+            >
+          </div>
           <input
             v-model="confirmPassword"
             type="password"
             id="confirmPassword"
             name="confirmPassword"
-            class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8 text-gray-100 outline-none transition-colors duration-200 ease-in-out focus:border-[#42d392] focus:bg-transparent focus:ring-2 focus:ring-transparent"
+            class="w-3/4 bg-opacity-20 w-full rounded border border-gray-600  py-1 px-3  transition-colors duration-200 ease-in-out"
             required
           />
         </div>
         <button
-          type="submit"
+          class="p-2 m-3 rounded border border-gray-900 hover:bg-slate-200"
         >
           Submit
         </button>
@@ -47,10 +53,6 @@
           class="bg-opacity-50 absolute right-8 top-8 rounded-lg bg-[#242424] p-8 px-4 py-2 text-red-500"
           v-if="errorMsg"
           >{{ errorMsg }}</span
-        >
-        <p class="mt-3 text-xs">Do you have an account yet?</p>
-        <nuxt-link class="w-fit text-sm text-[#aac8e4] hover:text-[#42b883]" to="/login"
-          >Login</nuxt-link
         >
       </form>
 

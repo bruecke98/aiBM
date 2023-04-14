@@ -1,0 +1,4 @@
+<template>
+    USER
+    <AuthUser />
+</template>

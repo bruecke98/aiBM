@@ -4,7 +4,11 @@
         <div class="header flex flex-row sticky top-2 bg-slate-200 dark:bg-slate-800 h-16 p-4 m-5 rounded-md">
             <!-- Logo -->
             <div class="basis-1/4">
-            <h1 class="text-left text-4xl">DeepShares</h1> 
+            <h1 class="text-left text-4xl">
+                <nuxt-link to="/main">
+                    DeepShares
+                </nuxt-link>
+            </h1> 
             </div>
             <!-- Search -->
             <div class="basis-1/2">
@@ -16,7 +20,11 @@
                     <!-- <div  class="basis-1/4"  > <Icon name="carbon:finance" /> </div> -->
                     <div  class="basis-1/4"  ><slot class="basis-1/4"></slot> </div>
                     <!-- <div  class="basis-1/4"  ><Icon name="carbon:finance" /></div> -->
-                    <div  class="basis-1/4"  ><Icon name="material-symbols:person-outline" /></div>
+                    <div  class="basis-1/4">
+                        <nuxt-link to="/account">
+                            <Icon name="material-symbols:person-outline" />
+                        </nuxt-link>
+                    </div>
                 </div>
             </div>
         </div>

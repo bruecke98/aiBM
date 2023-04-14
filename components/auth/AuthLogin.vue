@@ -3,30 +3,33 @@
         <form
           @submit.prevent="userLogin"
         >
-          <h2>Login</h2>
-          <div >
-            <label for="full-name" class="text-sm leading-7 text-gray-400">Email</label>
+          <h2 class="text-left text-xl">Login</h2>
+          <div class="mb-2">
+            <div>
+              <label for="full-name" class="text-sm leading-7 text-gray-400">Email</label>
+            </div>
             <input
               v-model="email"
               type="email"
               id="email"
               name="email"
-              class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8 text-gray-100 outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
+              class="w-3/4 rounded border border-gray-600 py-1 px-3 "
               required
             />
           </div>
           <div >
-            <label for="password" class="text-sm leading-7 text-gray-400">Password</label>
-            <input
+            <div>
+              <label for="full-name" class="text-sm leading-7 text-gray-400">Password</label>
+            </div>            <input
               id="password"
               v-model="password"
               name="password"
               type="password"
-              class="bg-opacity-20 w-full rounded border border-gray-600 bg-transparent py-1 px-3 text-base leading-8 text-gray-100 outline-none transition-colors duration-200 ease-in-out focus:border-[#42b883] focus:bg-transparent focus:ring-2 focus:ring-transparent"
+              class="w-3/4 rounded border border-gray-600 py-1 px-3 "
               required
             />
           </div>
-          <button>
+          <button class="p-2 m-3 rounded border border-gray-900 hover:bg-slate-200">
             LogIn
           </button>
           <span
