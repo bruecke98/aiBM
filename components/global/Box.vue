@@ -6,6 +6,6 @@
   
   <style>
     .box {
-      @apply bg-white shadow-md rounded-md p-6 w-1/2 h-auto m-10;
+      @apply bg-light-background dark:bg-dark-background border dark:border-dark-text border-light-text rounded-md p-6 md:w-1/2 h-auto m-10;
     }
   </style>

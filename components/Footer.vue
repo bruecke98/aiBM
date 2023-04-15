@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-96">
+    <div class="mt-96 bg-light-background dark:bg-dark-background">
         <h1>Footer</h1>
         <slot></slot>
     </div>
@@ -7,7 +7,6 @@
 
 <style scoped>
     div {
-        background-color: #f0f0f0;
         padding: 10px;
         bottom: 0;
         width: 100%;

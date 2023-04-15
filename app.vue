@@ -7,8 +7,8 @@
       </button>
     </Header >
     <HeaderAuth v-else>
-      <button @click="toggleTheme" > 
-        <span :class="{'hidden' : isDark}" ><Icon name="material-symbols:dark-mode" /></span>
+      <button @click="toggleTheme" class="ml-10" > 
+        <span :class="{'hidden' : isDark}"  ><Icon name="material-symbols:dark-mode" /></span>
         <span :class="{'hidden' : !isDark}" ><Icon name="solar:sun-2-broken" /></span>
       </button>
     </HeaderAuth >

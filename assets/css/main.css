@@ -5,4 +5,5 @@
 body{
     font-family: Roboto;
     text-align: center;
+    @apply bg-light-background dark:bg-dark-background dark:text-dark-text text-light-text transition-colors duration-300 ; 
 }

@@ -1,4 +1,3 @@
 <template>
-    USER
     <AuthUser />
 </template>
