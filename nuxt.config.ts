@@ -10,8 +10,18 @@ export default defineNuxtConfig({
     modules: [
         'nuxt-icon', 
         '@pinia/nuxt',
-        '@nuxt/devtools',
+        // '@nuxt/devtools',
         '@nuxtjs/supabase'
     ],
-    plugins: [{ src: './plugins/oruga.js' }]
+    plugins: [
+        { src: './plugins/oruga.js' },
+    ],
+    runtimeConfig: {
+        private: {
+            stripePK: process.env.STRIPE_PK,
+        },
+        public: {
+            appDomain: process.env.APP_DOMAIN,
+        }
+    },
 })

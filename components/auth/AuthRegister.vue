@@ -66,6 +66,7 @@
 </template>
 
 <script setup>
+const {client} = useSupabaseClient();
 const user = useSupabaseUser();
 const email = ref('');
 const password = ref('');
@@ -87,6 +88,7 @@ const userRegister = async () => {
       email: email.value,
       password: password.value,
     });
+    
     email.value = '';
     password.value = '';
     confirmPassword.value = '';

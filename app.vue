@@ -25,9 +25,7 @@
 <script setup lang="ts">
 
 const user = useSupabaseUser()
-console.log(
-  user
-)
+
 const isDark = ref(false)
 
 function toggleTheme() {
