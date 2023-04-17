@@ -14,4 +14,7 @@
 const changeStripe = async () => {
     return navigateTo('https://billing.stripe.com/p/login/test_00g3f42Gg5GR784cMM', {external : true});
 };
+definePageMeta({
+    middleware: ['auth'],
+});
 </script>

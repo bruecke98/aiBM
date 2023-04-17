@@ -6,13 +6,12 @@ export default  defineNuxtRouteMiddleware(async () => {
   }
 
   // Check if the user has an active subscription
-  const status =  await getSubscriptionStatus()
   
   if (status ) {
     console.log(status)
     if(status === true){
     // User has an active subscription, allow access to the protected route
-    return navigateTo('/')
+    return navigateTo('/main')
     }
   } 
 });

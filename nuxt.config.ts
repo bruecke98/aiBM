@@ -24,4 +24,11 @@ export default defineNuxtConfig({
             appDomain: process.env.APP_DOMAIN,
         }
     },
+    pinia: {
+        autoImports: [
+          // automatically imports `defineStore`
+          'defineStore', // import { defineStore } from 'pinia'
+          ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
+        ],
+      },
 })
