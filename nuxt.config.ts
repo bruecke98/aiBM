@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         'nuxt-icon', 
         '@pinia/nuxt',
         // '@nuxt/devtools',
-        '@nuxtjs/supabase'
+        '@nuxtjs/supabase',
     ],
     plugins: [
         { src: './plugins/oruga.js' },
@@ -30,5 +30,5 @@ export default defineNuxtConfig({
           'defineStore', // import { defineStore } from 'pinia'
           ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
         ],
-      },
+    }
 })

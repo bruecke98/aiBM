@@ -1,18 +1,18 @@
 export const useUserStore = defineStore('user', () => {
     const user = useSupabaseUser()
-    const email = ref(null)
+    let email  = ref("")
   
     onMounted(async () => {
       await user;
-      email.value = user.value?.email || ""
+      email = user.value?.email ? ref(user.value?.email) : ref("")
     })
   
     return {
       getEmail() {
-        return email.value
+        return email
       },
-      setEmail(value) {
-        email.value = value
+      setEmail(value : string) {
+        email = ref(value)
       },
     }
   })
