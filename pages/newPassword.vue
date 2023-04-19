@@ -40,11 +40,10 @@ const errorMsg = ref('');
 const user = useSupabaseUser();
 const supabase = useSupabaseClient();
 const config = useRuntimeConfig();
+const route = useRoute()
 
 
 const newPassword = async () => {
-    console.log("f")
-
     if(user && user.value && user.value.email){
         if (password.value !== confirmPassword.value ) {
             errorMsg.value = 'Passwords do not match!';
@@ -55,10 +54,10 @@ const newPassword = async () => {
             }, 3000);
             return;
         } else  {
-            const { data, error } = await supabase.auth.resetPasswordForEmail(
-                user.value.email , {
-                redirectTo: `${config.public.appDomain}/newPassword`,
-            })
+            // const { data, error } = await supabase.auth.updateUser({
+            //     password: password.value,
+            //     // access_token: resetPToken
+            // })
         }
     }
 }

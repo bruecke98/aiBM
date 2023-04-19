@@ -5,9 +5,9 @@
             <h1>better</h1>
             <h1>investments</h1>
         </Box>  
-        <Box class="md:basis-1/2">
-                <div v-if="newP">
-                    <AuthNewPassword />
+        <Box class="md:basis-1/2" >
+                <div v-if="newP || access">
+                    <AuthNewPassword  />
                 </div>
                 <div v-else>   
                     <AuthRegister v-if="reg" />
@@ -44,4 +44,11 @@
 const reg = ref(false)
 const newP = ref(false)
 
+const access = ref('')	;
+const hash = useRoute().hash // outputs "asdasd"
+if(hash){
+    access.value = hash.split('=')[1].split('&')[0]
+    console.log(access.value) 
+
+}
 </script>
