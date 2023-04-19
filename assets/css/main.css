@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body{
-    font-family: Roboto;
-    text-align: center;
-    @apply  transition-colors duration-300 ; 
+    font-family: Roboto , sans-serif;
+    text-align: center; 
 }

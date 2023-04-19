@@ -1,6 +1,6 @@
 <template>
   <div :class="{ 'dark': darkMode }">
-  <div  class="bg-light-background dark:bg-dark-background dark:text-dark-text text-light-text" >
+  <div  class="bg-light-background dark:bg-dark-background dark:text-dark-text text-light-text transition-colors duration-200" >
     <Header v-if="user">
       <button @click="change_theme" > 
         <span :class="{'hidden' : darkMode}" ><Icon name="material-symbols:dark-mode" /></span>

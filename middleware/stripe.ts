@@ -1,12 +1,14 @@
+import {updateCustomer}  from '../server/api/supabase/updateCustomer';
 export default defineNuxtRouteMiddleware(async() => {
     const user = useSupabaseUser();
+    const config = useRuntimeConfig();
     
     if (!user.value) {
       return navigateTo('/');
     }else{
       const supaClient = useSupabaseClient();
       const email : string = user?.value.email ?? '';
-      const date = new Date()
+      const date: Date = new Date()
       // create a new entry in the supabase table customer
       // search for mail in customre table
       // check on api/stripe/active if customer is active
@@ -22,25 +24,39 @@ export default defineNuxtRouteMiddleware(async() => {
         if (error) {
           console.log(error);
         } else {
-          if (data.length == 0 || data[0].mail == email || data[0].checked_time == null || hoursDiff > 24 ) {
+          const stripeData = await $fetch(
+            '/api/stripe/isActive',
+            {
+              method: 'POST',
+              body : {mail : email}
+            } 
+          );
+          if (data.length == 0) {
             // check if stripe active
-            const data = await $fetch('/api/stripe/isActive');
-            if(data){
-              console.log(data.isActive, 'create new entry in customer table')
+            
+
+            if(stripeData.body.isActive == true){
+              console.log(stripeData.body.isActive, 'create new entry in customer table')
+              const { data: newCustomer, error } = await supaClient
+                .from('customer')
+                .insert([ { mail: email, checked_time: date } ] as any)
+                .single()
+            }else{
+              console.log(stripeData.body.isActive, 'navigate to /payment')
+              return navigateTo('/payment');
             }
 
-          } else {
-            // check if customer is active
+          } else if(  data[0].checked_time == null || hoursDiff > 0.02) {
+            // update timestamp
+            if(stripeData.body.isActive == true){
+              const update = await updateCustomer(email, date, config.supabaseKey);
+            }else { 
+              console.log(stripeData.body.isActive, 'navigate to /payment')
+              return navigateTo('/payment');
+            }
           }
+          return;
         }
       }
-
-
-
-
-
-
-      
-
     }
   });
