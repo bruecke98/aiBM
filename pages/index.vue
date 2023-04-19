@@ -6,12 +6,21 @@
             <h1>investments</h1>
         </Box>  
         <Box class="md:basis-1/2">
-                <AuthRegister v-if="reg" />
-                <AuthLogin v-else />
+                <div v-if="newP">
+                    <AuthNewPassword />
+                </div>
+                <div v-else>   
+                    <AuthRegister v-if="reg" />
+                    <AuthLogin v-else />
+                </div>
+                
+                <div v-if="!reg">
+                    <button  class="inline-block text-xs underline" @click="newP = !newP"><h1>{{ !newP ? "Passwort vergessen?" : ""}}</h1></button>
+                </div>
                 <div>
                     <!-- <button @click="reg = true"><h1>Register</h1></button> -->
                     <p class="text-xs inline-block">{{ !reg ? "You don't have an account yet? " : "You have an Account? "}} </p>
-                    <button class="inline-block text-sm underline" @click="reg = !reg"><h1>{{ !reg ? "Register" : "Login"}}</h1></button>
+                    <button class="inline-block text-sm underline" @click="reg = !reg; newP = false"><h1>{{ !reg ? "Register" : "Login"}}</h1></button>
                 </div>
         </Box> 
     </div>
@@ -33,5 +42,6 @@
 <script setup lang="ts">
 // const client = useSupabaseClient()
 const reg = ref(false)
+const newP = ref(false)
 
 </script>
