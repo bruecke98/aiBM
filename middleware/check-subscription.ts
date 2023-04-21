@@ -14,7 +14,7 @@ export default  defineNuxtRouteMiddleware(async () => {
     console.log("check-subscription.ts", stripeData.body.isActive)
     //  if stripe subscription is active navigate to / -> so the user cant pay twice
     if (stripeData.body.isActive === true) {
-      return navigateTo('/')
+      return navigateTo('/main')
     }
   }
 });

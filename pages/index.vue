@@ -7,7 +7,7 @@
         </Box>  
         <Box class="md:basis-1/2" >
                 <div v-if="newP || access">
-                    <AuthNewPassword :access="access" />
+                    <AuthNewPassword :newAccess="access" />
                 </div>
                 <div v-else>   
                     <AuthRegister v-if="reg" />
@@ -44,11 +44,11 @@
 const reg = ref(false)
 const newP = ref(false)
 
-const access = ref('')	;
+const access = ref('');
 const hash = useRoute().hash // outputs "asdasd"
 if(hash){
     access.value = hash.split('=')[1].split('&')[0]
     console.log(access.value) 
-
 }
+
 </script>
