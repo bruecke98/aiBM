@@ -1,5 +1,5 @@
 <template>
-    <div class="flex md:flex-row flex-col  md:mt-40 ">
+    <div class="flex md:flex-row flex-col  md:mt-16 ">
         <Box class=" md:basis-1/2 text-left text-3xl max-h-72">
             <h1>make</h1>
             <h1>better</h1>

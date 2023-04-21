@@ -15,8 +15,10 @@
                 hover:translate-y-1 hover:scale-110 transition ease-in-out">
             Send Password Reset Link
         </button>
-        <span class="bg-opacity-50 absolute rounded-lg p-8 px-4 py-2 text-red-500" v-if="errorMsg">{{ errorMsg}}</span>
-        <span class="bg-opacity-50 absolute rounded-lg p-8 px-4 py-2 text-green-500" v-if="successMsg">{{ successMsg}}</span>
+        <div>
+          <span class="bg-opacity-50 absolute rounded-lg p-8 px-4 py-2 text-red-500" v-if="errorMsg">{{ errorMsg}}</span>
+          <span class="bg-opacity-50 absolute rounded-lg p-8 px-4 py-2 text-green-500" v-if="successMsg">{{ successMsg}}</span>
+        </div>
       </form>
       </div>
       <div v-else>
