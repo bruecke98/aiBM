@@ -40,7 +40,7 @@
 </template>
 
 <script setup lang="ts">
-// const client = useSupabaseClient()
+
 const reg = ref(false)
 const newP = ref(false)
 
