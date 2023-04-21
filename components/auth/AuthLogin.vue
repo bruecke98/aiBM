@@ -30,7 +30,7 @@
 
 <script setup>
 const user = useSupabaseUser();
-const email = ref('');
+const email = ref(user.value?.email || '');
 const password = ref('');
 const errorMsg = ref('');
 const { auth } = useSupabaseAuthClient();

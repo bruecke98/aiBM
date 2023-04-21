@@ -7,7 +7,7 @@
         </Box>  
         <Box class="md:basis-1/2" >
                 <div v-if="newP || access">
-                    <AuthNewPassword  />
+                    <AuthNewPassword :access="access" />
                 </div>
                 <div v-else>   
                     <AuthRegister v-if="reg" />

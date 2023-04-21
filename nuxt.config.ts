@@ -17,9 +17,8 @@ export default defineNuxtConfig({
         { src: './plugins/oruga.js' },
     ],
     runtimeConfig: {
-        supabaseKey: process.env.SUPABASE_KEY,
-
         private: {
+            supabaseKey: process.env.SUPABASE_KEY,
             stripePK: process.env.STRIPE_PK,
         },
         public: {

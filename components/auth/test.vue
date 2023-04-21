@@ -23,7 +23,6 @@
   const email = ref('');
   const errorMsg = ref('');
   const { auth } = useSupabaseAuthClient();
-  const config = useRuntimeConfig();
 
   
   const sendNewPassword = async () => {

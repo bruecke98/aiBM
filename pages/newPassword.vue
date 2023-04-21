@@ -39,7 +39,6 @@ const confirmPassword = ref('');
 const errorMsg = ref('');
 const user = useSupabaseUser();
 const supabase = useSupabaseClient();
-const config = useRuntimeConfig();
 const route = useRoute()
 
 

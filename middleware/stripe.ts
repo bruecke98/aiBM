@@ -1,7 +1,7 @@
 import {updateCustomer}  from '../server/api/supabase/updateCustomer';
 export default defineNuxtRouteMiddleware(async() => {
     const user = useSupabaseUser();
-    const config = useRuntimeConfig();
+    const config =  useRuntimeConfig();
     
     if (!user.value) {
       return navigateTo('/');
@@ -49,13 +49,13 @@ export default defineNuxtRouteMiddleware(async() => {
           } else if(  data[0].checked_time == null || hoursDiff > 0.02) {
             // update timestamp
             if(stripeData.body.isActive == true){
-              const update = await updateCustomer(email, date, config.supabaseKey);
+              const key = config.supabaseKey;
+              const update = await updateCustomer(email, date);
             }else { 
               console.log(stripeData.body.isActive, 'navigate to /payment')
               return navigateTo('/payment');
             }
           }
-          return;
         }
       }
     }
