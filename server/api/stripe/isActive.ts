@@ -7,7 +7,6 @@ const stripe = new Stripe(config.private.stripePK, {
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
-    console.log(body);
     const customers = await stripe.customers.list({ email: body.mail });
     if (customers.data.length === 0) {
         return {
@@ -22,7 +21,6 @@ export default defineEventHandler(async (event) => {
             status: 'active', // retrieve only active subscriptions
             limit: 1, // retrieve only the latest subscription
         });
-        console.log(subscriptions.data[0].status)
         if (subscriptions.data[0].status === "active") {
             return {
                 status: 200,

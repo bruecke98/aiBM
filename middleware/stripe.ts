@@ -19,7 +19,6 @@ export default defineNuxtRouteMiddleware(async() => {
         const timeDiff = date.getTime() - time_check.getTime(); 
         // calculate the number of hours in the time difference
         const hoursDiff = timeDiff / (1000 * 60 * 60);
-        console.log(hoursDiff) 
         if (error) {
           console.log(error);
         } else {
@@ -35,13 +34,11 @@ export default defineNuxtRouteMiddleware(async() => {
             
 
             if(stripeData.body.isActive == true){
-              console.log(stripeData.body.isActive, 'create new entry in customer table')
               const { data: newCustomer, error } = await supaClient
                 .from('customer')
                 .insert([ { mail: email, checked_time: date } ] as any)
                 .single()
             }else{
-              console.log(stripeData.body.isActive, 'navigate to /payment')
               return navigateTo('/payment');
             }
 
@@ -50,7 +47,6 @@ export default defineNuxtRouteMiddleware(async() => {
             if(stripeData.body.isActive == true){
               await updateCustomer(email, date);
             }else { 
-              console.log(stripeData.body.isActive, 'navigate to /payment')
               return navigateTo('/payment');
             }
           }

@@ -80,13 +80,6 @@
     },
   });
 
-
-  
-  // console.log("AUTCH COMP", props.newAccess)
-
-
-
-  
   const sendPasswordResetEmail = async () => {
     try {
       let { data, error } = await supabase.auth.resetPasswordForEmail(email.value)

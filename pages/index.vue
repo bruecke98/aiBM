@@ -48,7 +48,6 @@ const access = ref('');
 const hash = useRoute().hash // outputs "asdasd"
 if(hash){
     access.value = hash.split('=')[1].split('&')[0]
-    console.log(access.value) 
 }
 
 </script>

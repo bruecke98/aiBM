@@ -2,7 +2,6 @@ import Stripe from 'stripe';
 
 export default defineEventHandler(async (event) => {
     const body = await readBody(event)
-    console.log('body', body)
     const config = useRuntimeConfig()
     const stripe = new Stripe(config.private.stripePK, {
         apiVersion: '2022-11-15',
@@ -12,9 +11,6 @@ export default defineEventHandler(async (event) => {
 
     if (customer.data.length > 0) {
     const customerId = customer.data[0].id;
-    console.log('Customer ID:', customerId);
-    } else {
-    console.log('Customer not found');
     }
 
     const session = await stripe.checkout.sessions.create({
