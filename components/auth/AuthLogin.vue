@@ -44,7 +44,7 @@ const userLogin = async () => {
     email.value = '';
     password.value = '';
     if (error) throw error;
-    // return navigateTo('/main');
+    return navigateTo('/main');
   } catch (error) {
     errorMsg.value = error.message;
     setTimeout(() => {

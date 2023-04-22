@@ -27,9 +27,10 @@
 <script setup lang="ts">
 
 const user = useSupabaseUser()
+const router = useRouter()
 
 const darkMode = useCookie(
-  'list',
+  'darkMode',
   {
     default: () => true,
     watch: 'shallow'
@@ -37,7 +38,11 @@ const darkMode = useCookie(
 )
 function change_theme() {
   darkMode.value = !darkMode.value
+  // load new if responsive external css or charts color
+  // router.go(0)
+
 }
 
 </script>
+
 

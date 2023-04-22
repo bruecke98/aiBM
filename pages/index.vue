@@ -28,6 +28,7 @@
     <div class="flex md:flex-row flex-col  mt-40 ">  
         <Box class="md:basis-1/3">
             <h2>Eins</h2>
+            <Skeleton />
         </Box> 
         <Box class="md:basis-1/3">
             <h2>Zwei</h2>
