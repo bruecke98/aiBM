@@ -1,54 +1,53 @@
 <template>
-    <div class="flex md:flex-row flex-col  md:mt-16 ">
-        <Box class=" md:basis-1/2 text-left text-3xl max-h-72">
-            <h1>make</h1>
-            <h1>better</h1>
-            <h1>investments</h1>
-        </Box>  
-        <Box class="md:basis-1/2" >
-                <div v-if="newP || access">
-                    <AuthNewPassword :newAccess="access" />
-                </div>
-                <div v-else>   
-                    <AuthRegister v-if="reg" />
-                    <AuthLogin v-else />
-                </div>
-                
-                <div v-if="!reg">
-                    <button  class="inline-block text-xs underline" @click="newP = !newP"><h1>{{ !newP ? "Passwort vergessen?" : ""}}</h1></button>
-                </div>
-                <div>
-                    <!-- <button @click="reg = true"><h1>Register</h1></button> -->
-                    <p class="text-xs inline-block">{{ !reg ? "You don't have an account yet? " : "You have an Account? "}} </p>
-                    <button class="inline-block text-sm underline" @click="reg = !reg; newP = false"><h1>{{ !reg ? "Register" : "Login"}}</h1></button>
-                </div>
-        </Box> 
-    </div>
+    <div class=" grid grid-cols-2">
+        <div class="p-6 m-6 text-left text-2xl">
+            <h1>create</h1>
+            <h1>your own</h1>
+            <h1>or shared</h1>
+            <h1>AI-based</h1>
+            <h1>Business Model</h1>
+        </div>  
+        <div class="text-left text-2xl m-6 p-6">
+            <div class="border-2 p-5 rounded-lg">
+                <h3>Existing Model </h3>
+                    <input 
+                        class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
+                        type="text"
+                        id="projectName"
+                        name="projectName"
+                        placeholder="Project Name"
+                        required
+                    />      
+                    <input 
+                        class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
+                        type="text"
+                        id="projectID"
+                        name="projectID"
+                        placeholder="Project ID"
+                        required
+                    />
+                    <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3">Load</button>
+            </div>
 
-    <div class="flex md:flex-row flex-col  mt-40 ">  
-        <Box class="md:basis-1/3">
-            <h2>Eins</h2>
-            <Skeleton />
-        </Box> 
-        <Box class="md:basis-1/3">
-            <h2>Zwei</h2>
-        </Box> 
-        <Box class="md:basis-1/3">
-            <h2>Drei</h2>
-        </Box> 
+            <div class="mt-12 border-2 p-5 rounded-lg">
+                <h3>Create new Model </h3>
+                    <input 
+                        class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
+                        type="text"
+                        id="projectName"
+                        name="projectName"
+                        placeholder="Project Name"
+                        required
+                    />      
+                    <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3">Create</button>
+
+            </div>
+
+        </div>
     </div>
-    
 </template>
 
 <script setup lang="ts">
 
-const reg = ref(false)
-const newP = ref(false)
-
-const access = ref('');
-const hash = useRoute().hash // outputs "asdasd"
-if(hash){
-    access.value = hash.split('=')[1].split('&')[0]
-}
 
 </script>
