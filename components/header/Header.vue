@@ -23,7 +23,10 @@ import { useProjectNameStore } from '~/stores/projectName';
 
 const projectNameStore = useProjectNameStore();
 
-const name = computed(() => {
-  return projectNameStore.projectName;
-});
+const name = ref(projectNameStore.projectName);
+
+watch(() => projectNameStore, (newVal, oldVal) => {
+    name = newVal;
+})
+
 </script>

@@ -1,7 +1,7 @@
 <template>
     <div>
         <div>
-        <h1>Customer </h1>
+        <h1>Supplier </h1>
             <input 
                             class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                             type="text"
@@ -357,7 +357,7 @@ async function save(){
         gains: checkedGains.value,
         pains: checkedPains.value,
     };
-    await $fetch(`/api/setCustomer`, 
+    await $fetch(`/api/setSupplier`, 
     {
         method: 'POST',
         body: { projectName: projectNameStore.projectName, 
@@ -370,11 +370,12 @@ async function save(){
                 channels: checkedChannels.value,
                 resources: checkedResources.value,
                 activities: checkedActivities.value,
-
+                
             },
     });
 
     navigateTo("/platform");
+
 }
 
 
