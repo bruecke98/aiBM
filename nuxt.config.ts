@@ -7,6 +7,7 @@ export default defineNuxtConfig({
           autoprefixer: {},
         },
     },
+    pages: true,
     modules: [
         'nuxt-icon', 
         '@pinia/nuxt',
