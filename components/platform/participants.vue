@@ -111,7 +111,7 @@
     </div>
 </template>
 
-<script setup lang="ts" >
+<script setup  >
 
 const big = ref(false); 
 const valuePropBig = ref(false);
@@ -119,13 +119,13 @@ const valueCaptureBig = ref(false);
 const valueDeliveryBig = ref(false);
 const valueCreationBig = ref(false);
 
-const props = defineProps<{
-    participant: string;
+const props = defineProps({
+    participant: '',
     data: []
-}>()
+})
 
 const name =  props.data.reduce((acc, curr) => {
-  acc.push(curr.name)
+  acc.push(curr.name )
   return acc
 }, [])
 

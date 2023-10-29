@@ -29,6 +29,6 @@ const setProjectService = async () => {
   // Call the API to create a new project with the given email and name
   await useFetch(`/api/setService/` + projectNameStore.projectName);
 
-  navigateTo("/service");
+  navigateTo("steps/service");
 };
 </script>

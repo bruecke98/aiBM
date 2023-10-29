@@ -12,6 +12,11 @@ export const useProjectNameStore = defineStore('projectName', () => {
     return { projectName, setProjectName };
   } else {
     // use a different storage mechanism here
+    const projectName = ref('' as string);
+    const setProjectName = (name: string) => {
+      projectName.value = name;
+    };
+    return { projectName, setProjectName };
   }
   
 
