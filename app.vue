@@ -11,8 +11,9 @@
 
 
 <script setup lang="ts">
+const cookie = useCookie('projectName');
 
-
+cookie.value = '';
 
 
 </script>

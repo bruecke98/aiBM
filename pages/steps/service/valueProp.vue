@@ -65,7 +65,10 @@
                 </div>
         </div>
     
-        <button  class="mt-6 p-4 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
+        <button  class="mt-12 m-4 p-2 rounded-lg transition ease-in-out delay-150 bg-emerald-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
+                  @click="finish"> finish 
+        </button>
+        <button  class="mt-12 m-4 p-4 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
                   @click="next"> next 
         </button>
                    
@@ -146,7 +149,7 @@
         changeValues(serviceDb.aiValue[v])
     }
     for (const p in serviceDb.promise) {
-        changePromise(serviceDb.promise[p])
+        changeDatas(serviceDb.promise[p])
     }
     for (const o in serviceDb.offering) {
         changeActivities(serviceDb.offering[o])
@@ -171,6 +174,20 @@
         }
         );
         navigateTo("/steps/service/valueCreation");
+    }
+    async function finish() {
+        await $fetch(`/api/setValueProp/` ,
+        {
+            method: 'POST',
+            body: {
+                name: projectNameStore.projectName,
+                aiValue: checkedValues.value,
+                promise: checkedPromise.value,
+                offering: checkedOffering.value
+            }
+        }
+        );
+        navigateTo("/service");
     }
     
     </script>

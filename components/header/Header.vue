@@ -19,14 +19,10 @@
 </template>
 
 <script setup>
-import { useProjectNameStore } from '~/stores/projectName';
+const cookie = useCookie('projectName');
 
-const projectNameStore = useProjectNameStore();
-
-const name = ref(projectNameStore.projectName);
-
-watch(() => projectNameStore, (newVal, oldVal) => {
-    name = newVal;
-})
+const name = computed(() => {
+    return cookie.value;
+});
 
 </script>

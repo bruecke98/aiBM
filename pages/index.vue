@@ -54,6 +54,7 @@
 <script setup lang >
 // import { NuxtLink } from '#build/components';
 import { useProjectNameStore } from '~/stores/projectName';
+const cookie = useCookie('projectName');
 const projectNameStore = useProjectNameStore();
 const route = useRoute()
 
@@ -74,6 +75,7 @@ const loadExistingProject = async () => {
         if (item.projectName === existingProjectName.value.trim()) {
             console.log(item); // Accessing the email property of item
             projectNameStore.setProjectName(existingProjectName.value);
+            cookie.value = existingProjectName.value;
             if(item.bm === "platform"){
                 navigateTo("/platform");
             }else if(item.bm === "service"){
@@ -105,6 +107,7 @@ const createNewProject = async () => {
   // Call the API to create a new project with the given email and name
   await useFetch(`/api/` + newProjectName.value);
   projectNameStore.setProjectName(newProjectName.value);
+  cookie.value = newProjectName.value;
   navigateTo("/main");
 };
 

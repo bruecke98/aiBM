@@ -7,7 +7,7 @@
         <div class="grid grid-cols-5">
             <div >
                 <button @click="navigateTo('steps/service/valueCreation')" class="hover:bg-cyan-200 border border-gray-500 p-[0.5] rounded-lg">
-                    <Icon name="material-symbols:ink-pen-rounded" />
+                    <Icon name="ic:round-mode-edit" />
                 </button>
           
             </div>
@@ -25,16 +25,14 @@
         <div class="border rounded-lg p-3 m-4  bg-cyan-300">
             <ServiceAibm :name="'key activities'" :data="service.activity"></ServiceAibm>
         </div>
-        <div class="border rounded-lg p-3 m-4">
-            
-        </div>
+       
     </div>
 
     <div class="p-3 m-4 border-2 rounded-lg border-gray-400">
         <div class="grid grid-cols-5">
             <div >
                 <button @click="navigateTo('steps/service/valueProp')" class="hover:bg-cyan-200 border border-gray-500 p-[0.5] rounded-lg">
-                    <Icon name="material-symbols:ink-pen-rounded" />
+                    <Icon name="ic:round-mode-edit" />
                 </button>
           
             </div>
@@ -62,7 +60,7 @@
         <div class="grid grid-cols-5">
             <div >
                 <button @click="navigateTo('steps/service/valueDelivery')" class="hover:bg-cyan-200 border border-gray-500 p-[0.5] rounded-lg">
-                    <Icon name="material-symbols:ink-pen-rounded" />
+                    <Icon name="ic:round-mode-edit" />
                 </button>
           
             </div>
@@ -91,7 +89,7 @@
     <div class="grid grid-cols-5">
             <div >
                 <button @click="navigateTo('steps/service/valueCapture')" class="hover:bg-cyan-200 border border-gray-500 p-[0.5] rounded-lg">
-                    <Icon name="material-symbols:ink-pen-rounded" />
+                    <Icon name="ic:round-mode-edit" />
                 </button>
             </div>
             <div class="text-xl col-span-3 ">
@@ -117,6 +115,8 @@
 // get data from service table
 import { useProjectNameStore } from '~/stores/projectName';
 const projectNameStore = useProjectNameStore();
+const cookie = useCookie('projectName')
+
 const big = ref(false); 
 
 const serviceLoad = await useFetch(`/api/getService/` + projectNameStore.projectName);

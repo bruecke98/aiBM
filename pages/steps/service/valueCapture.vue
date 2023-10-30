@@ -44,9 +44,12 @@
                     
                 </div>
         </div>
-    
-        <button  class="mt-6 p-4 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
-                  @click="next"> finish 
+        
+        <button  class="mt-12 p-3 m-4 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
+                  @click="back"> back 
+        </button>
+        <button  class="mt-12 m-4 p-2 rounded-lg transition ease-in-out delay-150 bg-emerald-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
+                  @click="finish"> finish 
         </button>
                    
     </div>   
@@ -114,7 +117,7 @@
 
 
     
-    async function next() {
+    async function finish() {
         await $fetch(`/api/setValueCapture/` ,
         {
             method: 'POST',
@@ -127,5 +130,19 @@
         );
         navigateTo("/service");
     }
+    async function back() {
+        await $fetch(`/api/setValueCapture/` ,
+        {
+            method: 'POST',
+            body: {
+                name: projectNameStore.projectName,
+                revenue: checkedRevenues.value,
+                cost: checkedCosts.value,
+            }
+        }
+        );
+        navigateTo("/steps/service/valueDelivery");
+    }
+
     
     </script>
