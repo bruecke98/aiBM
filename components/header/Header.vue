@@ -4,14 +4,14 @@
         <!-- Logo -->
             <div>
                 <nuxt-link to="/" class="text-gray-200 text-3xl">
-                    AI-BM
+                    ai-bm
                 </nuxt-link>
             </div>
-            <div class="text-xl text-gray-200">
+            <button @click="findCanvas" class="text-xl text-gray-200">
                
                     {{ name }}
                 
-            </div>
+            </button>
                 
            
     </div>
@@ -24,5 +24,23 @@ const cookie = useCookie('projectName');
 const name = computed(() => {
     return cookie.value;
 });
+
+async function findCanvas() {
+    const { data } = await useFetch(`/api/getProject`);
+    data.value.data.some(item => {
+        if (item.projectName === cookie.value.trim()) {
+            if(item.bm === "platform"){
+                navigateTo("/platform");
+            }else if(item.bm === "service"){
+                navigateTo("/service");
+            }else {
+                navigateTo("/main");
+            }
+            return true;
+        }else{
+            navigateTo("/");
+        }
+    });
+}
 
 </script>

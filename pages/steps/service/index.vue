@@ -26,20 +26,20 @@
     </div>
     <div class="mt-12">
             <h1>Type </h1>
-            <div class="grid grid-cols-3">
-                <div class="border-r"  
+            <div class="grid grid-cols-3 ">
+                <div class="border-r p-4 m-4 rounded-lg  "  
                      :class="{'bg-green-100' : serviceBg}">
                     <p>AI-Service</p>
                     <button  class="mt-6 p-2 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
                             @click="typeBM('ai-service')"> select </button>
                 </div>
-                <div class="border-r"
+                <div class="border-r p-4 m-4 rounded-lg"
                     :class="{'bg-green-100' : productBg}">
                     <p>AI-Product</p>
                     <button  class="mt-6 p-2 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"
                             @click="typeBM('ai-product')"> select </button>
                 </div>
-                <div class="border-r"
+                <div class="border-r p-4 m-4 rounded-lg"
                     :class="{'bg-green-100' : researchBg}">
                     <p>AI-Research</p>
                     <button  class="mt-6 p-2 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300"

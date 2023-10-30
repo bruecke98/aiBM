@@ -4,8 +4,8 @@
             <h1>create</h1>
             <h1>your own</h1>
             <h1>or shared</h1>
-            <h1>AI-based</h1>
-            <h1>Business Model</h1>
+            <h1>ai-based</h1>
+            <h1>business model</h1>
         </div>  
         <div class="text-left text-2xl m-6 p-6">
             <div class="border-2 p-5 rounded-lg">

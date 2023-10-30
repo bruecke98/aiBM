@@ -5,8 +5,8 @@
 
         <div class="grid grid-cols-3"> 
             <div>
-            <NuxtLink :to="`/steps/platform/${props.participant}`" class="px-2 py-1  border rounded-full bg-cyan-600 text-white mr-10 text-left text-2xl">
-                +
+            <NuxtLink :to="`/steps/platform/${props.participant}`" class="">
+                <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700" />
             </NuxtLink>
             </div>
             <div class="text-2xl">
@@ -37,14 +37,14 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valuePropBig}" class="flex flex-row overflow-auto flex-wrap" >
-                <div v-for="j in job2 "  class="p-2 rounded-lg flex-1 border m-3 bg-cyan-200">
+                <div v-for="j in job2 "  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-100">
                     <p>{{ j }} </p> <div class="text-xs">Job</div>     
                 </div>
-                <div v-for="p in pain2 "  class="p-2 rounded-lg flex-1 border m-3 bg-rose-200">
+                <div v-for="p in pain2 "  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-200">
                     {{ p }}      
                     <div class="text-xs">Pain</div>        
                 </div>
-                <div v-for="p in gain2"  class="p-2 rounded-lg flex-1 border m-3 bg-green-200">
+                <div v-for="p in gain2"  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-300">
                     {{ p }} 
                     <div class="text-xs">Gain</div>         
                 </div>
@@ -59,11 +59,11 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valueCaptureBig}" class="flex flex-row overflow-auto flex-wrap" >
-                <div v-for="r in revenue2 "  class="flex-1 border p-2 rounded-lg m-3 bg-emerald-300">
+                <div v-for="r in revenue2 "  class="flex-1 border p-2 rounded-lg m-3 bg-green-300">
                     {{ r }}      
                     <div class="text-xs">Revenue Model</div>        
                 </div>
-                <div v-for="f in filter2 "  class="flex-1 border p-2 rounded-lg m-3 bg-amber-200">
+                <div v-for="f in filter2 "  class="flex-1 border p-2 rounded-lg m-3 bg-green-200">
                     {{ f }}      
                     <div class="text-xs">Filter</div>        
                 </div>
@@ -78,7 +78,7 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valueDeliveryBig}" class="flex flex-row overflow-auto flex-wrap" >
-                    <div v-for="ch in channel2 "  class="flex-1 border p-2 rounded-lg m-3 bg-purple-200">
+                    <div v-for="ch in channel2 "  class="flex-1 border p-2 rounded-lg m-3 bg-amber-200">
                     {{ ch }}      
                     <div class="text-xs">Channel</div>        
                 </div>
@@ -93,13 +93,13 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valueCreationBig}" class="flex flex-row overflow-auto flex-wrap" >
-                    <div v-for="r in resources2 "  class="flex-1 border p-2 rounded-lg m-3 bg-teal-200">
+                    <div v-for="r in resources2 "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-200">
                     {{ r }}      
                     <div class="text-xs">Resources</div>        
                 </div>
               
                 <div class="flex flex-row flex-nowrap overflow-auto">
-                    <div v-for="a in activities2 "  class="flex-1 border p-2 rounded-lg m-3 bg-sky-200">
+                    <div v-for="a in activities2 "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-300">
                     {{ a }}      
                     <div class="text-xs">Activities</div>        
                 </div>

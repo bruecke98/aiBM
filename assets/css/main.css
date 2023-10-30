@@ -2,7 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-body{
-    font-family: Roboto , sans-serif;
-    text-align: center; 
+@font-face {
+    font-family: 'SpaceG', sans-serif;
+    src: url('../font/SpaceGrotesk-VariableFont_wght.ttf');
+  }
+
+body {
+    font-family: 'SpaceG', sans-serif;
+    text-align: center;
 }

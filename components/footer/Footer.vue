@@ -1,6 +1,6 @@
 <template>
-    <div class="mt-96 bg-light-background dark:bg-dark-background">
-        <h1>Footer</h1>
+    <div class="mt-96">
+        <h2 class="text-xs">Paul Brückmann </h2>
         <slot></slot>
     </div>
 </template>

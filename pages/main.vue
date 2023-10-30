@@ -18,6 +18,8 @@
 <script setup>
 import { useProjectNameStore } from '~/stores/projectName';
 const projectNameStore = useProjectNameStore();
+const cookie = useCookie('projectName')
+
 
 const setProjectPlatform = async () => {
   // Call the API to create a new project with the given email and name

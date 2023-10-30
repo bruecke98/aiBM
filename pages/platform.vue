@@ -14,17 +14,20 @@
     
 </div>
 <div class="grid grid-cols-2">
-    {{ cookie }}
-    <div class="border p-3 m-6"> comments </div>
-    <div class="border p-3 m-6"> sharing  </div>
+    <div class="border p-3 m-6"> 
+        <p class="text-xl">comments</p>
+          
+    </div>
+    <div class="border p-3 m-6"> 
+        <p class="text-xl">sharing</p>
+        <p class="text-lg">you can share the name of your ai-based business model with the project name (right at the top)</p>
+    </div>
 </div>
 
 
 </template>
 
 <script setup>
-import { useProjectNameStore } from '~/stores/projectName';
-const projectNameStore = useProjectNameStore();
 const cookie = useCookie('projectName')
 
 const big = ref(false); 

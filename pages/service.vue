@@ -113,14 +113,13 @@
 
 <script setup>
 // get data from service table
-import { useProjectNameStore } from '~/stores/projectName';
-const projectNameStore = useProjectNameStore();
 const cookie = useCookie('projectName')
 
 const big = ref(false); 
 
-const serviceLoad = await useFetch(`/api/getService/` + projectNameStore.projectName);
+const serviceLoad = await useFetch(`/api/getService/` + cookie.value);
 const service = serviceLoad.data.value.data[0]
+
 
 
 

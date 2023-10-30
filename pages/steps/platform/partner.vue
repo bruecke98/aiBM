@@ -179,15 +179,15 @@
         </div>
         <div class="mt-12">
             <button @click="save" class="text-2xl p-2 rounded-lg transition ease-in-out delay-150 bg-cyan-300 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-cyan-800 duration-300">
-             {{ projectNameStore.projectName}}
+             {{ cookie }}
              save
             </button>        </div>
     </div>
 </template>
 
 <script setup>
-import { useProjectNameStore } from '~/stores/projectName';
-const projectNameStore = useProjectNameStore();
+
+const cookie = useCookie('projectName');
 const customerName = ref('');
 
 const job = ref('')
@@ -351,7 +351,7 @@ async function save(){
      //  save in db 
     // make sure it shows on platform
     const data = {
-        project: projectNameStore.projectName,
+        project: cookie.value,
         name: customerName.value,
         jobs: checkedJobs.value,
         gains: checkedGains.value,
@@ -360,7 +360,7 @@ async function save(){
     await $fetch(`/api/setPartner`, 
     {
         method: 'POST',
-        body: { projectName: projectNameStore.projectName, 
+        body: { projectName: cookie.value, 
                 name: customerName.value,
                 jobs: checkedJobs.value,
                 gains: checkedGains.value,
