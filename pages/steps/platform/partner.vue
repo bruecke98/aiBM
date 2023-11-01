@@ -2,6 +2,9 @@
     <div>
         <div>
         <h1>Partner </h1>
+        <p class="text-lg mb-4">the platform key infrastructure providers besides the
+platform owner</p>
+
             <input 
                             class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                             type="text"
@@ -18,13 +21,13 @@
                 <div class="border-r">
                     <h2>Job</h2>
                     <p class="p-4">Tasks of the partner that the platform helps
-to perform. needs of the partner that the
-platform helps to meet</p>
-<p class="p-6 text-sm">
+                    to perform. needs of the partner that the
+                    platform helps to meet</p>
+                    <p class="p-6 text-sm">
                         How does the AI platform address your specific tasks,needs or challenges?
                     </p>
                
-                  {{ checkedJobs }}
+                
 
                     <div v-for="job in jobs">
                     <input class="m-2"  type="checkbox" :id="`${job}`" @change="changeJob(job)"/>
@@ -32,19 +35,20 @@ platform helps to meet</p>
                     </div>
 
 
-                    <input v-model="job" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new job"> 
+                    <input v-model="job" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new job"> 
                         <button @click="addToJobs" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedJobs">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
                    
                 </div>
                 <div class="border-r">
                     <h2>Gain</h2>
                     <p class="p-4">Tasks of the partner that the platform helps
-to perform. needs of the partner that the
-platform helps to meet. </p>
-<p class="p-6 text-sm"> What benefits or improvements do you expect from using the AI platform?</p>
+                    to perform. needs of the partner that the
+                    platform helps to meet. </p>
+                    <p class="p-6 text-sm"> What benefits or improvements do you expect from using the AI platform?</p>
 
-                  {{ checkedGains }}
 
                     <div v-for="gain in gains">
                     <input class="m-2"  type="checkbox" :id="`${gain}`" @change="changeGain(gain)"/>
@@ -52,19 +56,21 @@ platform helps to meet. </p>
                     </div>
 
 
-                    <input v-model="gain" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new gain"> 
+                    <input v-model="gain" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new gain"> 
                         <button @click="addToGains" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedGains">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
                    
                 </div>
                 <div class="border-r">
                     <h2>Pain</h2>
                     <p class="p-4">Problems, dangers and barriers, related to
-the job done or the need met that the
-platform reduces, eliminates, solves</p>
-<p class="p-6 text-sm">What specific challenges or barriers do you experience that the AI platform is designed to overcome?</p>
+                    the job done or the need met that the
+                    platform reduces, eliminates, solves</p>
+                    <p class="p-6 text-sm">What specific challenges or barriers do you experience that the AI platform is designed to overcome?</p>
 
-                  {{ checkedPains }}
+         
 
                     <div v-for="pain in pains">
                     <input class="m-2"  type="checkbox" :id="`${pain}`" @change="changePain(pain)"/>
@@ -72,9 +78,11 @@ platform reduces, eliminates, solves</p>
                     </div>
 
 
-                    <input v-model="pain" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new pain"> 
+                    <input v-model="pain" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new pain"> 
                         <button @click="addToPains" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedPains">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
 
@@ -93,7 +101,7 @@ platform reduces, eliminates, solves</p>
                     <p class="p-6 text-sm"> Which Revenue Model seems fitting for you? </p>
 
                
-                  {{ checkedRevenues }}
+   
 
                     <div v-for="revenue in revenues">
                     <input class="m-2"  type="checkbox" :id="`${revenue}`" @change="changeRevenue(revenue)"/>
@@ -101,9 +109,11 @@ platform reduces, eliminates, solves</p>
                     </div>
 
 
-                    <input v-model="revenue" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new revenue Model"> 
+                    <input v-model="revenue" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new revenue Model"> 
                         <button @click="addToRevenue" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedRevenues">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
               
@@ -120,7 +130,6 @@ platform reduces, eliminates, solves</p>
                     <p class="p-6 text-sm"> How important is it for you to have control over who can access your data or interact with you through AI platforms?</p>
 
                
-                  {{ checkedFilters }}
 
                     <div v-for="filter in filters">
                     <input class="m-2"  type="checkbox" :id="`${filter}`" @change="changeFilter(filter)"/>
@@ -128,9 +137,11 @@ platform reduces, eliminates, solves</p>
                     </div>
 
 
-                    <input v-model="filter" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
+                    <input v-model="filter" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
                         <button @click="addToFilter" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedFilters">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
                 
@@ -150,7 +161,6 @@ platform reduces, eliminates, solves</p>
                     <p class="p-6 text-sm">What channels or platforms do you prefer for accessing AI services on the platform?</p>
 
                
-                  {{ checkedChannels }}
 
                     <div v-for="channel in channels">
                     <input class="m-2"  type="checkbox" :id="`${channel}`" @change="changeChannel(channel)"/>
@@ -158,9 +168,11 @@ platform reduces, eliminates, solves</p>
                     </div>
 
 
-                    <input v-model="channel" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Channel"> 
+                    <input v-model="channel" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Channel"> 
                         <button @click="addToChannels" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedChannels">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
                 </div>
@@ -182,7 +194,6 @@ platform reduces, eliminates, solves</p>
                     <p class="p-6 text-sm">What resources are you willing to invest in AI interactions?</p>
         
                
-                  {{ checkedResources }}
 
                     <div v-for="resource in resources">
                     <input class="m-2"  type="checkbox" :id="`${resource}`" @change="changeResources(resource)"/>
@@ -190,9 +201,11 @@ platform reduces, eliminates, solves</p>
                     </div>
 
 
-                    <input v-model="resource" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Resource"> 
+                    <input v-model="resource" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Resource"> 
                         <button @click="addToResources" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedResources">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
               
@@ -205,7 +218,6 @@ platform reduces, eliminates, solves</p>
                  
 
                
-                  {{ checkedActivities }}
 
                     <div v-for="activitie in activities">
                     <input class="m-2"  type="checkbox" :id="`${activitie}`" @change="changeActivities(activitie)"/>
@@ -213,10 +225,12 @@ platform reduces, eliminates, solves</p>
                     </div>
 
 
-                    <input v-model="activitie" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Activitie"> 
+                    <input v-model="activitie" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Activitie"> 
                         <button @click="addToActivities" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
- 
+                        <div class="m-1"  v-for="j in checkedActivities">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
                 </div>
 
             </div>
@@ -236,10 +250,12 @@ const customerName = ref('');
 
 const job = ref('')
 const jobs = ref([
-    'easy to use', 
+'data analysis', 
     'detection',
     'prediction', 
-    'classification',  
+    'classification', 
+    'text generation',
+    'support'
 ])
 const checkedJobs = ref([])
 
@@ -258,10 +274,10 @@ function changeJob(job) {
 
 const gain = ref('')
 const gains = ref([
-    'easy to use', 
-    'detection',
+'efficiency',
+    'data accuracy',
     'prediction', 
-    'classification',  
+    'user friendly'  
 ])
 const checkedGains = ref([])
 function addToGains() {
@@ -278,10 +294,11 @@ function changeGain(gain) {
 
 const pain = ref('')
 const pains = ref([
-    'easy to use', 
-    'detection',
-    'prediction', 
-    'classification',  
+'data security', 
+    'no expertise',
+    'privacy concerns', 
+    'resource limitations',  
+    'time constraints'  
 ])
 const checkedPains = ref([])
 function addToPains() {
@@ -298,9 +315,11 @@ function changePain(pain) {
 
 const revenue = ref('')
 const revenues = ref([
+'free',
     'saas', 
-    'pay-per-data',
     'per-per-use',
+    'pay-with-data',
+    'one-time-payment'
 ])
 const checkedRevenues = ref([])
 function addToRevenue() {  
@@ -335,9 +354,10 @@ function changeFilter(filter) {
 
 const channel = ref('')
 const channels = ref([
-    'On-Edge', 
-    'Cloud',
-    'Plug-in'
+'Cloud',
+    'API',
+    'Web',
+    'App',
 ])
 const checkedChannels = ref([])
 function addToChannels() {  
@@ -353,10 +373,11 @@ function changeChannel(channel) {
 
 const resource = ref('')
 const resources = ref([
-    'Time', 
+'Time', 
     'Money',
     'Data',
     'Hardware',
+    'data privacy expertise'
 ])
 const checkedResources = ref([])
 function addToResources() {  
@@ -372,10 +393,12 @@ function changeResources(resource) {
 
 const activitie = ref('')
 const activities = ref([
-    'Data Collection', 
+'Data Collection', 
     'Data Processing',
     'Data Analysis',
     'Data Visualization',
+    'Model Training',
+    'Interacting with the AI'
 ])
 const checkedActivities = ref([])
 function addToActivities() {  

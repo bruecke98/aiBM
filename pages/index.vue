@@ -1,10 +1,11 @@
 <template>
     <div class=" grid grid-cols-2">
-        <div class="p-6 m-6 text-left text-2xl">
+        <div class="p-6 m-6 text-left ml-60 text-2xl">
             <h1>create</h1>
             <h1>your own</h1>
             <h1>or shared</h1>
-            <h1>ai-based</h1>
+            <h1><span class="bg-cyan-200 rounded-lg px-1">ai-based</span> or</h1>
+            <h1><span class="bg-emerald-200 rounded-lg px-1 ">ai-platform</span></h1>
             <h1>business model</h1>
         </div>  
         <div class="text-left text-2xl m-6 p-6">

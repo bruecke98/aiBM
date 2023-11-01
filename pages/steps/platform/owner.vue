@@ -2,12 +2,13 @@
     <div>
         <div>
         <h1>Owner </h1>
+        <p class="text-lg mb-4">the platform owner</p>
             <input 
                             class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                             type="text"
                             id="projectName"
                             name="projectName"
-                            placeholder="Name of Organization"
+                            placeholder="Name of Owner/Organization"
                             required
                             v-model="customerName"
                         />  
@@ -16,9 +17,15 @@
             <h1>Value Proposition </h1>
             <div class="grid grid-cols-3">
                 <div class="border-r">
-                    <h2>Job</h2>
-               
-                  {{ checkedJobs }}
+                    <h2 class="text-xl">Job</h2>
+                    <p class="p-4">tasks that the platform owner
+                    wants to get done, often related
+                    to a mission statement and a
+                    value proposition of the
+                    platform 
+                    </p>
+                    <p class="p-6 text-sm"></p>
+       
 
                     <div v-for="job in jobs">
                     <input class="m-2"  type="checkbox" :id="`${job}`" @change="changeJob(job)"/>
@@ -26,15 +33,20 @@
                     </div>
 
 
-                    <input v-model="job" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new job"> 
+                    <input v-model="job" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new job"> 
                         <button @click="addToJobs" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedJobs">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
                    
                 </div>
                 <div class="border-r">
-                    <h2>Gain</h2>
-               
-                  {{ checkedGains }}
+                    <h2 class="text-xl">Gain</h2>
+                    <p class="p-4">positive effects related to the
+                    job and need that are enhanced
+                    by the platform</p>
+                    <p class="p-6 text-sm"></p>
+             
 
                     <div v-for="gain in gains">
                     <input class="m-2"  type="checkbox" :id="`${gain}`" @change="changeGain(gain)"/>
@@ -42,15 +54,21 @@
                     </div>
 
 
-                    <input v-model="gain" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new gain"> 
+                    <input v-model="gain" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new gain"> 
                         <button @click="addToGains" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedGains">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
                    
                 </div>
                 <div class="border-r">
-                    <h2>Pain</h2>
+                    <h2 class="text-xl">Pain</h2>
+                    <p class="p-4">problems, dangers and barriers,
+                    related to the job done or the
+                    need met that must be reduced,
+                    eliminated or solved</p>
+                    <p class="p-6 text-sm"></p>
                
-                  {{ checkedPains }}
 
                     <div v-for="pain in pains">
                     <input class="m-2"  type="checkbox" :id="`${pain}`" @change="changePain(pain)"/>
@@ -58,9 +76,11 @@
                     </div>
 
 
-                    <input v-model="pain" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new pain"> 
+                    <input v-model="pain" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new pain"> 
                         <button @click="addToPains" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedPains">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
 
@@ -71,9 +91,15 @@
             <h1>Value Capture </h1>
             <div class="grid grid-cols-2">
                 <div class="border-r">
-                    <h2>Revenue Model</h2>
+                    <h2 class="text-xl">Revenue Model</h2>
+                    <p class="p-4">
+                        The revenue model dimension depicts how the BM generates revenue in order to cover costs and
+                        thrive as an organization
+                    </p>
+                    <p class="p-6 text-sm"> Which Revenue Model seems fitting for you? </p>
+
                
-                  {{ checkedRevenues }}
+
 
                     <div v-for="revenue in revenues">
                     <input class="m-2"  type="checkbox" :id="`${revenue}`" @change="changeRevenue(revenue)"/>
@@ -81,17 +107,23 @@
                     </div>
 
 
-                    <input v-model="revenue" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new revenue Model"> 
+                    <input v-model="revenue" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new revenue Model"> 
                         <button @click="addToRevenue" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedRevenues">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
               
                 
                 <div class="border-r">
-                    <h2>Filter</h2>
-               
-                  {{ checkedFilters }}
+                    <h2 class="text-xl">Governance</h2>
+                    <p class="p-4">rules and processes that ensure
+                    a high quality of usage and
+                    results on the platform and
+                    protect these. 
+                    </p>
+                    <p class="p-6 text-sm">How are usage quality and results protected on the platform?</p>
 
                     <div v-for="filter in filters">
                     <input class="m-2"  type="checkbox" :id="`${filter}`" @change="changeFilter(filter)"/>
@@ -99,9 +131,11 @@
                     </div>
 
 
-                    <input v-model="filter" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
+                    <input v-model="filter" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
                         <button @click="addToFilter" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedFilters">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
                 
@@ -115,9 +149,10 @@
                 <div class="border-r">
                     
                     <div class="border-r">
-                    <h2>Channel</h2>
-               
-                  {{ checkedChannels }}
+                    <h2 class="text-xl">Channel</h2>
+                    <p class="p-4">channels that the owner uses to
+                    promote the platform</p>
+                    <p class="p-6 text-sm">"What are the promotional channels employed by the platform owner?"</p>
 
                     <div v-for="channel in channels">
                     <input class="m-2"  type="checkbox" :id="`${channel}`" @change="changeChannel(channel)"/>
@@ -125,9 +160,11 @@
                     </div>
 
 
-                    <input v-model="channel" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Channel"> 
+                    <input v-model="channel" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Channel"> 
                         <button @click="addToChannels" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedChannels">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
                 </div>
@@ -142,9 +179,12 @@
             <div class="grid grid-cols-2">
                     
                 <div class="border-r">
-                    <h2>Resources</h2>
-               
-                  {{ checkedResources }}
+                    <h2 class="text-xl">Resources</h2>
+                    <p class="p-4">resources, knowhow, expertise,
+                    technology that the owner must
+                    invest, to keep the platform
+                    running and thriving.</p>
+                    <p class="p-6 text-sm">What are the essential resources required to ensure the continuous operation of this AI platform?</p>
 
                     <div v-for="resource in resources">
                     <input class="m-2"  type="checkbox" :id="`${resource}`" @change="changeResources(resource)"/>
@@ -152,16 +192,20 @@
                     </div>
 
 
-                    <input v-model="resource" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Resource"> 
+                    <input v-model="resource" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Resource"> 
                         <button @click="addToResources" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedResources">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
               
                 <div class="border-r">
-                    <h2>Activities</h2>
-               
-                  {{ checkedActivities }}
+                    <h2 class="text-xl">Activities</h2>
+                    <p class="p-4">key activities that the owner
+                    needs to perform to keep the
+                    platform running and thriving.</p>
+                    <p class="p-6 text-sm">What are the critical activities an AI platform owner must consistently undertake to ensure the platform's operation?</p>
 
                     <div v-for="activitie in activities">
                     <input class="m-2"  type="checkbox" :id="`${activitie}`" @change="changeActivities(activitie)"/>
@@ -169,9 +213,11 @@
                     </div>
 
 
-                    <input v-model="activitie" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Activitie"> 
+                    <input v-model="activitie" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Activitie"> 
                         <button @click="addToActivities" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
-
+                        <div class="m-1"  v-for="j in checkedActivities">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
  
                 </div>
 
@@ -198,10 +244,12 @@ const customerName = ref('');
 
 const job = ref('')
 const jobs = ref([
-    'easy to use', 
+'data analysis', 
     'detection',
     'prediction', 
-    'classification',  
+    'classification', 
+    'text generation',
+    'support'  
 ])
 const checkedJobs = ref([])
 
@@ -220,10 +268,10 @@ function changeJob(job) {
 
 const gain = ref('')
 const gains = ref([
-    'easy to use', 
-    'detection',
+'efficiency',
+    'data accuracy',
     'prediction', 
-    'classification',  
+    'user friendly'  
 ])
 const checkedGains = ref([])
 function addToGains() {
@@ -240,10 +288,11 @@ function changeGain(gain) {
 
 const pain = ref('')
 const pains = ref([
-    'easy to use', 
-    'detection',
-    'prediction', 
-    'classification',  
+'data security', 
+    'no expertise',
+    'privacy concerns', 
+    'resource limitations',  
+    'time constraints'  
 ])
 const checkedPains = ref([])
 function addToPains() {
@@ -260,9 +309,11 @@ function changePain(pain) {
 
 const revenue = ref('')
 const revenues = ref([
+'free',
     'saas', 
-    'pay-per-data',
     'per-per-use',
+    'pay-with-data',
+    'one-time-payment'
 ])
 const checkedRevenues = ref([])
 function addToRevenue() {  
@@ -279,8 +330,8 @@ function changeRevenue(revenue) {
 
 const filter = ref('')
 const filters = ref([
-    'High Value', 
-    'Low Value',
+    'Filters', 
+    'Expertise',
     'No opinion'
 ])
 const checkedFilters = ref([])
@@ -297,9 +348,10 @@ function changeFilter(filter) {
 
 const channel = ref('')
 const channels = ref([
-    'On-Edge', 
-    'Cloud',
-    'Plug-in'
+'Online',
+    'Print',
+    'intern',
+    
 ])
 const checkedChannels = ref([])
 function addToChannels() {  
@@ -315,10 +367,11 @@ function changeChannel(channel) {
 
 const resource = ref('')
 const resources = ref([
-    'Time', 
+'Time', 
     'Money',
     'Data',
     'Hardware',
+    'data privacy expertise'
 ])
 const checkedResources = ref([])
 function addToResources() {  
@@ -334,10 +387,12 @@ function changeResources(resource) {
 
 const activitie = ref('')
 const activities = ref([
-    'Data Collection', 
+'Data Collection', 
     'Data Processing',
     'Data Analysis',
     'Data Visualization',
+    'Model Training',
+    'Interacting with the AI'
 ])
 const checkedActivities = ref([])
 function addToActivities() {  

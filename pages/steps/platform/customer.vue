@@ -2,6 +2,8 @@
     <div>
         <div>
         <h1>Customer </h1>
+        <p class="text-lg mb-4">the platform buyer, user, consumer</p>
+
             <input 
                             class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                             type="text"
@@ -33,7 +35,7 @@
                     </div>
 
 
-                    <input v-model="job" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new job"> 
+                    <input v-model="job" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new job"> 
                     <button @click="addToJobs" class="mb-6 p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                     <div class="m-1"  v-for="j in checkedJobs">
@@ -56,7 +58,7 @@
                     </div>
 
 
-                    <input v-model="gain" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new gain"> 
+                    <input v-model="gain" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new gain"> 
                         <button @click="addToGains" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
                     <div class="m-1"  v-for="j in checkedGains">
                         <p class="border p-1 text-xs"> {{ j }}</p>
@@ -77,7 +79,7 @@
                     </div>
 
 
-                    <input v-model="pain" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new pain"> 
+                    <input v-model="pain" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new pain"> 
                         <button @click="addToPains" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                         <div class="m-1"  v-for="j in checkedPains">
@@ -106,7 +108,7 @@
                     </div>
 
 
-                    <input v-model="revenue" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new revenue Model"> 
+                    <input v-model="revenue" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new revenue Model"> 
                         <button @click="addToRevenue" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                         <div class="m-1"  v-for="j in checkedRevenues">
@@ -133,7 +135,7 @@
                     </div>
 
 
-                    <input v-model="filter" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
+                    <input v-model="filter" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
                         <button @click="addToFilter" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                         <div class="m-1"  v-for="j in checkedFilters">
@@ -163,7 +165,7 @@
                     </div>
 
 
-                    <input v-model="channel" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Channel"> 
+                    <input v-model="channel" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Channel"> 
                         <button @click="addToChannels" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                         <div class="m-1"  v-for="j in checkedChannels">
@@ -196,7 +198,7 @@
                     </div>
 
 
-                    <input v-model="resource" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Resource"> 
+                    <input v-model="resource" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Resource"> 
                         <button @click="addToResources" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                         <div class="m-1"  v-for="j in checkedResources">
@@ -219,7 +221,7 @@
                     </div>
 
 
-                    <input v-model="activitie" type="text" class="p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Activitie"> 
+                    <input v-model="activitie" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Activitie"> 
                         <button @click="addToActivities" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
 
                         <div class="m-1"  v-for="j in checkedActivities">

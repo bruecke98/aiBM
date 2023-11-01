@@ -65,7 +65,9 @@
                 </div>
                 <div v-for="f in filter2 "  class="flex-1 border p-2 rounded-lg m-3 bg-green-200">
                     {{ f }}      
-                    <div class="text-xs">Filter</div>        
+                    <div v-if="props.participant == 'Owner'" class="text-xs">Governance</div> 
+                    <div v-else class="text-xs">Filter</div>        
+       
                 </div>
 
             </div>
