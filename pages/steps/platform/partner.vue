@@ -17,6 +17,12 @@
             <div class="grid grid-cols-3">
                 <div class="border-r">
                     <h2>Job</h2>
+                    <p class="p-4">Tasks of the partner that the platform helps
+to perform. needs of the partner that the
+platform helps to meet</p>
+<p class="p-6 text-sm">
+                        How does the AI platform address your specific tasks,needs or challenges?
+                    </p>
                
                   {{ checkedJobs }}
 
@@ -33,7 +39,11 @@
                 </div>
                 <div class="border-r">
                     <h2>Gain</h2>
-               
+                    <p class="p-4">Tasks of the partner that the platform helps
+to perform. needs of the partner that the
+platform helps to meet. </p>
+<p class="p-6 text-sm"> What benefits or improvements do you expect from using the AI platform?</p>
+
                   {{ checkedGains }}
 
                     <div v-for="gain in gains">
@@ -49,7 +59,11 @@
                 </div>
                 <div class="border-r">
                     <h2>Pain</h2>
-               
+                    <p class="p-4">Problems, dangers and barriers, related to
+the job done or the need met that the
+platform reduces, eliminates, solves</p>
+<p class="p-6 text-sm">What specific challenges or barriers do you experience that the AI platform is designed to overcome?</p>
+
                   {{ checkedPains }}
 
                     <div v-for="pain in pains">
@@ -71,7 +85,13 @@
             <h1>Value Capture </h1>
             <div class="grid grid-cols-2">
                 <div class="border-r">
-                    <h2>Revenue Model</h2>
+                    <h2 class="text-xl">Revenue Model</h2>
+                    <p class="p-4">
+                        The revenue model dimension depicts how the BM generates revenue in order to cover costs and
+                        thrive as an organization
+                    </p>
+                    <p class="p-6 text-sm"> Which Revenue Model seems fitting for you? </p>
+
                
                   {{ checkedRevenues }}
 
@@ -89,7 +109,16 @@
               
                 
                 <div class="border-r">
-                    <h2>Filter</h2>
+                    <h2 class="text-xl">Filter</h2>
+                    <p class="p-4">
+                        The removal of access barriers, as
+                        well as the implementation of
+                        dedicated filters, like needed
+                        qualifications, to limit or rule out
+                        access for specific users
+                    </p>
+                    <p class="p-6 text-sm"> How important is it for you to have control over who can access your data or interact with you through AI platforms?</p>
+
                
                   {{ checkedFilters }}
 
@@ -115,7 +144,11 @@
                 <div class="border-r">
                     
                     <div class="border-r">
-                    <h2>Channel</h2>
+                        <h2 class="text-xl">Channel</h2>
+                    <p class="p-4">Points of usage, points of access,
+                    channels </p>
+                    <p class="p-6 text-sm">What channels or platforms do you prefer for accessing AI services on the platform?</p>
+
                
                   {{ checkedChannels }}
 
@@ -142,7 +175,12 @@
             <div class="grid grid-cols-2">
                     
                 <div class="border-r">
-                    <h2>Resources</h2>
+                    <h2 class="text-xl">Resources</h2>
+                    <p class="p-4"> Resources, knowhow, expertise,
+                    technology that users must invest,
+                    to be able to use the platform</p>
+                    <p class="p-6 text-sm">What resources are you willing to invest in AI interactions?</p>
+        
                
                   {{ checkedResources }}
 
@@ -159,7 +197,13 @@
                 </div>
               
                 <div class="border-r">
-                    <h2>Activities</h2>
+                    <h2 class="text-xl">Activities</h2>
+                    <p class="p-4">Key activities that users perform on
+                    a platform to finish job or meet
+                    need </p>
+                    <p class="p-6 text-sm">In what ways are you actively involved in the AI Platform?</p>
+                 
+
                
                   {{ checkedActivities }}
 
