@@ -10,22 +10,22 @@
         </div>  
         <div class="text-left text-2xl m-6 p-6">
             <div class="border-2 p-5 rounded-lg">
-                <h3>Existing Model </h3>
+                <h3>existing business model </h3>
                     <input 
                         class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
                         type="text"
                         id="projectName"
                         name="projectName"
-                        placeholder="Project Name"
+                        placeholder="project name"
                         required
                         v-model="existingProjectName"
                     />      
                     
-                    <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3" @click="loadExistingProject">Load</button>
+                    <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3" @click="loadExistingProject">load</button>
             </div>
 
             <div class="mt-12 border-2 p-5 rounded-lg">
-                <h3>Create new Model </h3>
+                <h3>create new business model </h3>
                     <!-- <input 
                         class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
                         type="text"
@@ -40,11 +40,11 @@
                         type="text"
                         id="projectName"
                         name="projectName"
-                        placeholder="Project Name"
+                        placeholder="new project name"
                         required
                         v-model="newProjectName"
                     />      
-                    <button :disabled="takenName" :class="{'border-red-600' : takenName}" class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3" @click="createNewProject">Create</button>
+                    <button :disabled="takenName" :class="{'border-red-600' : takenName}" class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3" @click="createNewProject">create</button>
 
             </div>
 
