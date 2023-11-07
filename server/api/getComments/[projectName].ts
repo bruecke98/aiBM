@@ -10,8 +10,8 @@ export default defineEventHandler(async (event) => {
   const name = event.context.params?.projectName ? event.context.params?.projectName : 0;
 
   const data = await supabase
-      .from('customer')
-      .select('*')
+      .from('comments')
+      .select('comment')
       .eq('project', name)
    
     return {data: data.data}

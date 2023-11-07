@@ -106,7 +106,9 @@
 
                     <div v-for="revenue in revenues">
                     <input class="m-2"  type="checkbox" :id="`${revenue}`" @change="changeRevenue(revenue)"/>
-                    <label class="m-1" :for="`${revenue}`">{{ revenue }}</label>
+                    <o-tooltip multiline class="" label="Software as a Service (SaaS) is a distribution model where applications are hosted by a service provider and made available to customers over the internet, typically on a subscription basis.">
+                        <label class="m-1" :for="`${revenue}`">{{ revenue }}</label>
+                    </o-tooltip>
                     </div>
 
 
@@ -138,7 +140,7 @@
                     </div>
 
 
-                    <input v-model="filter" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add new Filter"> 
+                    <input v-model="filter" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add Reason"> 
                         <button @click="addToFilter" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
                         <div class="m-1"  v-for="j in checkedFilters">
                         <p class="border p-1 text-xs"> {{ j }}</p>
@@ -152,7 +154,7 @@
 
         <div class="mt-12">
             <h1>Value Delivery </h1>
-            <div class="grid">
+            <div class="grid grid-cols-2">
                 <div class="border-r">
                     
                     <div class="border-r">
@@ -175,6 +177,31 @@
                         <p class="border p-1 text-xs"> {{ j }}</p>
                     </div>
  
+                </div>
+                </div>
+
+                <div class="grid">
+                <div class="border-r">
+                    
+                    <div class="border-r">
+                    <h2 class="text-xl">Organization readiness</h2>
+                    <p class="p-4">An organization's preparedness to implement strategies and change processes to effectively deliver its ai value proposition to customers </p>
+                    <p class="p-6 text-sm">How would you describe the readiness of your Company to implement ai?</p>
+
+                    <div v-for="ready in readiness">
+                    <input class="m-2"  type="checkbox" :id="`${ready}`" @change="changeReadiness(ready)"/>
+                    <label class="m-1" :for="`${ready}`">{{ ready }}</label>
+                    </div>
+
+
+                    <input v-model="ready" type="text" class="mt-6 p-1 w-1/2 border-2 border-gray-500 rounded-lg" placeholder="add reason"> 
+                        <button @click="addToReadiness" class="p-2 border m-1 rounded-lg hover:bg-cyan-200"> add </button>
+
+                        <div class="m-1"  v-for="j in checkedReady">
+                        <p class="border p-1 text-xs"> {{ j }}</p>
+                    </div>
+ 
+                </div>
                 </div>
                 </div>
               
@@ -318,7 +345,7 @@ function changePain(pain) {
 const revenue = ref('')
 const revenues = ref([
 'free',
-    'saas', 
+    'subscription', 
     'per-per-use',
     'pay-with-data',
     'one-time-payment'
@@ -338,9 +365,10 @@ function changeRevenue(revenue) {
 
 const filter = ref('')
 const filters = ref([
-    'High Value', 
-    'Low Value',
-    'No opinion'
+'very important', 
+    'important',
+    'neutral',
+    'not important',
 ])
 const checkedFilters = ref([])
 function addTofilter() {  
@@ -415,6 +443,26 @@ function changeActivities(activitie) {
 }
 
 
+const ready = ref('')
+const readiness = ref([
+    'very ready', 
+    'full management support',
+    'ready',
+    'neutral',
+    'not ready',
+])
+const checkedReady = ref([])
+function addToReadiness() {  
+    readiness.value.push(ready.value)
+}
+function changeReadiness(ready) {
+    if (checkedReady.value.includes(ready)) {
+        checkedReady.value = checkedReady.value.filter((r) => r !== ready)
+    } else {
+        checkedReady.value.push(ready)
+    }
+}
+
 
 async function save(){
      //  save in db 
@@ -436,6 +484,7 @@ async function save(){
                 pains: checkedPains.value,
                 revenues: checkedRevenues.value,
                 filters: checkedFilters.value,
+                readiness: checkedReady.value,
                 channels: checkedChannels.value,
                 resources: checkedResources.value,
                 activities: checkedActivities.value,

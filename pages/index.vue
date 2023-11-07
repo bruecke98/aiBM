@@ -25,7 +25,7 @@
             </div>
 
             <div class="mt-12 border-2 p-5 rounded-lg">
-                <h3>create new business model </h3>
+                <h3>create a new business model </h3>
                     <!-- <input 
                         class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
                         type="text"

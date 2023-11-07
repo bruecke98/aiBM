@@ -37,15 +37,15 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valuePropBig}" class="flex flex-row overflow-auto flex-wrap" >
-                <div v-for="j in job2 "  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-100">
-                    <p>{{ j }} </p> <div class="text-xs">Job</div>     
+                <div v-for="j, i in jobMap "  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-100">
+                    <p > {{ i }}</p><p class="text-lg">{{ j }}x </p> <div class="text-xs">Job</div>     
                 </div>
-                <div v-for="p in pain2 "  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-200">
-                    {{ p }}      
+                <div v-for="j, i in  painMap "  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-200">
+                    <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>   
                     <div class="text-xs">Pain</div>        
                 </div>
-                <div v-for="p in gain2"  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-300">
-                    {{ p }} 
+                <div v-for="j, i in gainMap"  class="p-2 rounded-lg flex-1 border m-3 bg-indigo-300">
+                    <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>
                     <div class="text-xs">Gain</div>         
                 </div>
 
@@ -59,12 +59,12 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valueCaptureBig}" class="flex flex-row overflow-auto flex-wrap" >
-                <div v-for="r in revenue2 "  class="flex-1 border p-2 rounded-lg m-3 bg-green-300">
-                    {{ r }}      
+                <div v-for="j, i in revenueMap "  class="flex-1 border p-2 rounded-lg m-3 bg-green-300">
+                    <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>    
                     <div class="text-xs">Revenue Model</div>        
                 </div>
-                <div v-for="f in filter2 "  class="flex-1 border p-2 rounded-lg m-3 bg-green-200">
-                    {{ f }}      
+                <div v-for="j, i in filterMap "  class="flex-1 border p-2 rounded-lg m-3 bg-green-200">
+                    <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>     
                     <div v-if="props.participant == 'Owner'" class="text-xs">Governance</div> 
                     <div v-else class="text-xs">Filter</div>        
        
@@ -80,9 +80,13 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valueDeliveryBig}" class="flex flex-row overflow-auto flex-wrap" >
-                    <div v-for="ch in channel2 "  class="flex-1 border p-2 rounded-lg m-3 bg-amber-200">
-                    {{ ch }}      
+                    <div v-for="j, i in channelMap "  class="flex-1 border p-2 rounded-lg m-3 bg-amber-200">
+                        <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>     
                     <div class="text-xs">Channel</div>        
+                </div>
+                <div v-if="readyMap" v-for="j, i in readyMap "  class="flex-1 border p-2 rounded-lg m-3 bg-amber-100">
+                        <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>     
+                    <div class="text-xs">Org. Readiness</div>        
                 </div>
                
             </div>
@@ -95,14 +99,14 @@
                 </button>
             </h3>
             <div :class="{'flex flex-row overflow-auto flex-nowrap': valueCreationBig}" class="flex flex-row overflow-auto flex-wrap" >
-                    <div v-for="r in resources2 "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-200">
-                    {{ r }}      
+                    <div v-for="j, i in resourcesMap "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-200">
+                        <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>    
                     <div class="text-xs">Resources</div>        
                 </div>
               
                 <div class="flex flex-row flex-nowrap overflow-auto">
-                    <div v-for="a in activities2 "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-300">
-                    {{ a }}      
+                    <div v-for="j, i in activitiesMap "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-300">
+                        <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>    
                     <div class="text-xs">Activities</div>        
                 </div>
                 </div>
@@ -135,6 +139,9 @@ const job = props.data.reduce((acc, curr) => {
   acc.push(curr.job)
   return acc
 }, [])
+
+// console.log("props", job)
+
 const pain = props.data.reduce((acc, curr) => {
   acc.push(curr.pain)
   return acc
@@ -163,9 +170,16 @@ const activities = props.data.reduce((acc, curr) => {
   acc.push(curr.activities)
   return acc
 }, [])
+const ready = props.data.reduce((acc, curr) => {
+  acc.push(curr.readiness)
+  return acc
+}, [])
 
 
-console.log(job)
+
+
+
+// console.log(job)
 const job2 = []
 for(const jo in job){
     for (const j in job[jo]){
@@ -236,6 +250,110 @@ for(const jo in activities){
             activities2.push(activities[jo][j])
         }
     }
+}
+
+
+let jobMap = {};
+
+props.data.forEach(project => {
+  let jobCategory = project.job[0]; // Assuming job is an array and we want the first job
+  if (jobMap.hasOwnProperty(jobCategory)) {
+    jobMap[jobCategory]++;
+  } else {
+    jobMap[jobCategory] = 1;
+  }
+});
+
+let painMap = {};
+
+props.data.forEach(project => {
+  let painCategory = project.pain[0]; // Assuming job is an array and we want the first job
+  if (painMap.hasOwnProperty(painCategory)) {
+    painMap[painCategory]++;
+  } else {
+    painMap[painCategory] = 1;
+  }
+});
+
+let gainMap = {};
+
+props.data.forEach(project => {
+  let gainCategory = project.gain[0]; // Assuming job is an array and we want the first job
+  if (gainMap.hasOwnProperty(gainCategory)) {
+    gainMap[gainCategory]++;
+  } else {
+    gainMap[gainCategory] = 1;
+  }
+});
+
+let revenueMap = {};
+
+props.data.forEach(project => {
+  let revenueCategory = project.revenue[0]; // Assuming job is an array and we want the first job
+  if (revenueMap.hasOwnProperty(revenueCategory)) {
+    revenueMap[revenueCategory]++;
+  } else {
+    revenueMap[revenueCategory] = 1;
+  }
+});
+
+let filterMap = {};
+
+props.data.forEach(project => {
+  let filterCategory = project.filter[0]; // Assuming job is an array and we want the first job
+  if (filterMap.hasOwnProperty(filterCategory)) {
+    filterMap[filterCategory]++;
+  } else {
+    filterMap[filterCategory] = 1;
+  }
+});
+
+let channelMap = {};
+
+props.data.forEach(project => {
+  let channelCategory = project.channel[0]; // Assuming job is an array and we want the first job
+  if (channelMap.hasOwnProperty(channelCategory)) {
+    channelMap[channelCategory]++;
+  } else {
+    channelMap[channelCategory] = 1;
+  }
+});
+
+let resourcesMap = {};
+
+props.data.forEach(project => {
+  let resourcesCategory = project.resources[0]; // Assuming job is an array and we want the first job
+  if (resourcesMap.hasOwnProperty(resourcesCategory)) {
+    resourcesMap[resourcesCategory]++;
+  } else {
+    resourcesMap[resourcesCategory] = 1;
+  }
+});
+
+let activitiesMap = {};
+
+props.data.forEach(project => {
+  let activitiesCategory = project.activities[0]; // Assuming job is an array and we want the first job
+  if (activitiesMap.hasOwnProperty(activitiesCategory)) {
+    activitiesMap[activitiesCategory]++;
+  } else {
+    activitiesMap[activitiesCategory] = 1;
+  }
+});
+
+
+let readyMap = {};
+
+if(ready[0]){
+    
+props.data.forEach(project => {
+  let readyCategory = project.readiness[0] ? project.readiness[0] : 0; // Assuming job is an array and we want the first job
+  if (readyMap.hasOwnProperty(readyCategory)) {
+    readyMap[readyCategory]++;
+  } else {
+    readyMap[readyCategory] = 1;
+  }
+});
 }
 
 

@@ -2,17 +2,17 @@
 import { createClient } from '@supabase/supabase-js'
 const supabaseUrl = 'https://qbqwusuvioifcqhsgqwu.supabase.co'
 
-
-export default defineEventHandler(async (event) => {
+export default defineEventHandler(async () => {
   const config = useRuntimeConfig()
   const supaKey : string = config.private.supabaseKey;
   const supabase = createClient(supabaseUrl, supaKey as string)
-  const name = event.context.params?.projectName ? event.context.params?.projectName : 0;
-
+  
   const data = await supabase
-      .from('customer')
+      .from('comment')
       .select('*')
-      .eq('project', name)
+      .eq('project', "test")
    
+    console.log(data.data)
+  
     return {data: data.data}
   })

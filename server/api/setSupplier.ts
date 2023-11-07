@@ -25,6 +25,7 @@ export default defineEventHandler(async (event) => {
           revenue: body.revenues as [],
           channel: body.channels as [],
           filter: body.filters as [],
+          readiness: body.readiness as [],
           resources: body.resources as [],
           activities: body.activities as [],	
 
