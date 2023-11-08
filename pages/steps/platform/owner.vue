@@ -103,9 +103,11 @@
 
                     <div v-for="revenue in revenues">
                     <input class="m-2"  type="checkbox" :id="`${revenue}`" @change="changeRevenue(revenue)"/>
-                    <o-tooltip multiline class="" label="Software as a Service (SaaS) is a distribution model where applications are hosted by a service provider and made available to customers over the internet, typically on a subscription basis.">
+                    <o-tooltip v-if="revenue==='SaaS'" multiline class="" label="Software as a Service (SaaS) is a distribution model where applications are hosted by a service provider and made available to customers over the internet, typically on a subscription basis.">
                         <label class="m-1" :for="`${revenue}`">{{ revenue }}</label>
                     </o-tooltip>
+                    <label v-else class="m-1" :for="`${revenue}`">{{ revenue }}</label>
+
                     </div>
 
 
@@ -312,7 +314,7 @@ function changePain(pain) {
 const revenue = ref('')
 const revenues = ref([
 'free',
-    'subscription', 
+    'SaaS', 
     'per-per-use',
     'pay-with-data',
     'one-time-payment'
@@ -446,3 +448,11 @@ async function save(){
 
 
 </script>
+
+<style>
+.o-tip__content {
+  padding: 10px;
+  background-color: #fff;
+  width: 200px;
+}
+</style>
