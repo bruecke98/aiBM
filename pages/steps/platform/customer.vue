@@ -367,7 +367,7 @@ const filters = ref([
     'not important',
 ])
 const checkedFilters = ref([])
-function addTofilter() {  
+function addToFilter() {  
     filters.value.push(filter.value)
 }
 function changeFilter(filter) {
