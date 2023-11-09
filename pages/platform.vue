@@ -153,8 +153,16 @@
     </div>
 </div>
 
-<div>
-    <!-- <Bar :data="revenueData"  /> -->
+
+<div class="mt-16">
+  <h1> Charts </h1>
+  <h2 class="text-lg"> Revenue </h2>
+    <Bar :data="revenueData" class="mx-auto w-3/5" />
+
+  <h2 class="mt-16 text-lg"> Channel </h2>
+    <Bar :data="channelData" class="mx-auto w-3/5" />
+
+
 </div>
 
 
@@ -191,203 +199,231 @@ const partner = partnerLoad.data.value.data
 let customerJob = {};
 
 customer.forEach(project => {
-  let jobCategory = project.job[0]; // Assuming job is an array and we want the first job
+  project.job.forEach(jobCategory => {// Assuming job is an array and we want the first job
   if (customerJob.hasOwnProperty(jobCategory)) {
     customerJob[jobCategory]++;
   } else {
     customerJob[jobCategory] = 1;
   }
 });
+});
 
 let customerRevenue = {};
 
 customer.forEach(project => {
-  let revenueCategory = project.revenue[0]; // Assuming job is an array and we want the first job
+  project.revenue.forEach(revenueCategory => {// Assuming job is an array and we want the first job
   if (customerRevenue.hasOwnProperty(revenueCategory)) {
     customerRevenue[revenueCategory]++;
   } else {
     customerRevenue[revenueCategory] = 1;
   }
 });
+});
 
 let ownerRevenue = {};
 
 owner.forEach(project => {
-  let revenueCategory = project.revenue[0]; // Assuming job is an array and we want the first job
+  project.revenue.forEach(revenueCategory => {// Assuming job is an array and we want the first job
   if (ownerRevenue.hasOwnProperty(revenueCategory)) {
     ownerRevenue[revenueCategory]++;
   } else {
     ownerRevenue[revenueCategory] = 1;
   }
 });
+});
 
 let partnerRevenue = {};
 
 partner.forEach(project => {
-  let revenueCategory = project.revenue[0]; // Assuming job is an array and we want the first job
+  project.revenue.forEach(revenueCategory => {// Assuming job is an array and we want the first job
   if (partnerRevenue.hasOwnProperty(revenueCategory)) {
     partnerRevenue[revenueCategory]++;
   } else {
     partnerRevenue[revenueCategory] = 1;
   }
 });
+});
 
 let supplierRevenue = {};
 
 supplier.forEach(project => {
-  let revenueCategory = project.revenue[0]; // Assuming job is an array and we want the first job
+  project.revenue.forEach(revenueCategory => {// Assuming job is an array and we want the first job
   if (supplierRevenue.hasOwnProperty(revenueCategory)) {
     supplierRevenue[revenueCategory]++;
   } else {
     supplierRevenue[revenueCategory] = 1;
   }
 });
+});
 
 let customerChannel = {};
 
 customer.forEach(project => {
-  let channelCategory = project.channel[0]; // Assuming job is an array and we want the first job
+  project.channel.forEach(channelCategory => {// Assuming job is an array and we want the first job
   if (customerChannel.hasOwnProperty(channelCategory)) {
     customerChannel[channelCategory]++;
   } else {
     customerChannel[channelCategory] = 1;
   }
 });
+});
 
 let ownerChannel = {};
 
 owner.forEach(project => {
-  let channelCategory = project.channel[0]; // Assuming job is an array and we want the first job
+  project.channel.forEach(channelCategory => {// Assuming job is an array and we want the first job
   if (ownerChannel.hasOwnProperty(channelCategory)) {
     ownerChannel[channelCategory]++;
   } else {
     ownerChannel[channelCategory] = 1;
   }
 });
+});
 
 let partnerChannel = {};
 
 partner.forEach(project => {
-  let channelCategory = project.channel[0]; // Assuming job is an array and we want the first job
+  project.channel.forEach(channelCategory => {// Assuming job is an array and we want the first job
   if (partnerChannel.hasOwnProperty(channelCategory)) {
     partnerChannel[channelCategory]++;
   } else {
     partnerChannel[channelCategory] = 1;
   }
 });
+});
 
 let supplierChannel = {};
 
 supplier.forEach(project => {
-  let channelCategory = project.channel[0]; // Assuming job is an array and we want the first job
+  project.channel.forEach(channelCategory => {// Assuming job is an array and we want the first job
   if (supplierChannel.hasOwnProperty(channelCategory)) {
     supplierChannel[channelCategory]++;
   } else {
     supplierChannel[channelCategory] = 1;
   }
 });
+});
 
 let customerResources = {};
 
 customer.forEach(project => {
-  let resourcesCategory = project.resources[0]; // Assuming job is an array and we want the first job
+  project.resources.forEach(resourcesCategory => {// Assuming job is an array and we want the first job
   if (customerResources.hasOwnProperty(resourcesCategory)) {
     customerResources[resourcesCategory]++;
   } else {
     customerResources[resourcesCategory] = 1;
   }
 });
+});
 
 let ownerResources = {};
 
 owner.forEach(project => {
-  let resourcesCategory = project.resources[0]; // Assuming job is an array and we want the first job
+  project.resources.forEach(resourcesCategory => {// Assuming job is an array and we want the first job
   if (ownerResources.hasOwnProperty(resourcesCategory)) {
     ownerResources[resourcesCategory]++;
   } else {
     ownerResources[resourcesCategory] = 1;
   }
+  });
 });
 
 let partnerResources = {};
 
 partner.forEach(project => {
-  let resourcesCategory = project.resources[0]; // Assuming job is an array and we want the first job
+  project.resources.forEach(resourcesCategory => {// Assuming job is an array and we want the first job
   if (partnerResources.hasOwnProperty(resourcesCategory)) {
     partnerResources[resourcesCategory]++;
   } else {
     partnerResources[resourcesCategory] = 1;
   }
 });
+});
 
 let supplierResources = {};
 
 supplier.forEach(project => {
-  let resourcesCategory = project.resources[0]; // Assuming job is an array and we want the first job
+  project.resources.forEach(resourcesCategory => {// Assuming job is an array and we want the first job
   if (supplierResources.hasOwnProperty(resourcesCategory)) {
     supplierResources[resourcesCategory]++;
   } else {
     supplierResources[resourcesCategory] = 1;
   }
 });
+});
 
-
-// Assuming customerRevenue, ownerRevenue, partnerRevenue, and supplierRevenue
-// are already defined as in your provided code snippets.
 
 // Function to merge the revenue data
 function mergeRevenueData(...revenueMaps) {
   const combinedRevenue = {};
 
-  revenueMaps.forEach(revenueMap => {
+  revenueMaps.forEach((revenueMap, index) => {
+    // Determine the type of revenue based on the index
+    const type = ['customer', 'owner', 'partner', 'supplier'][index];
+    
     for (const [key, value] of Object.entries(revenueMap)) {
       if (!combinedRevenue[key]) {
         combinedRevenue[key] = { category: key, customer: 0, owner: 0, partner: 0, supplier: 0 };
       }
-      console.log('here', value)
-      console.log(key)
-      console.log(revenueMap)
-      combinedRevenue[key].customer = value;
+      // Assign the value to the correct type
+      combinedRevenue[key][type] = value;
     }
   });
 
   return Object.values(combinedRevenue);
 }
 
-// First, give each map a property 'name' corresponding to the array it represents
-
-
 // Now, we merge the data
 const combinedArray = mergeRevenueData(customerRevenue, ownerRevenue, partnerRevenue, supplierRevenue);
+const combinedChannelArray = mergeRevenueData(customerChannel, partnerChannel, supplierChannel);
+console.log("CA", combinedArray)
 
-console.log(customerRevenue);
-console.log(combinedArray);
 
 
 const revenueData = {
   labels: combinedArray.map(item => item.category),
   datasets: [{
     label: 'Customer',
-    backgroundColor: 'black',
-    data: [1, 1]
+    backgroundColor: '#00e6e6',
+    data: combinedArray.map(item => item.customer)
   }, 
   {
     label: 'Owner',
-    backgroundColor: 'red',
+    backgroundColor: '#990000',
     data: combinedArray.map(item => item.owner)
   }, 
   {
     label: 'Partner',
-    backgroundColor: 'blue',
+    backgroundColor: '#B29747',
     data: combinedArray.map(item => item.partner)
   }, 
   {
     label: 'Supplier',
-    backgroundColor: 'green',
+    backgroundColor: '#4CA64C',
     data: combinedArray.map(item => item.supplier)
   }    
 ]
 };
+
+const channelData = {
+  labels: combinedChannelArray.map(item => item.category),
+  datasets: [{
+    label: 'Customer',
+    backgroundColor: '#00e6e6',
+    data: combinedChannelArray.map(item => item.customer)
+  }, 
+  {
+    label: 'Partner',
+    backgroundColor: '#B29747',
+    data: combinedChannelArray.map(item => item.partner)
+  }, 
+  {
+    label: 'Supplier',
+    backgroundColor: '#4CA64C',
+    data: combinedChannelArray.map(item => item.supplier)
+  }
+]
+}
 
 
 const customerFilter = {};

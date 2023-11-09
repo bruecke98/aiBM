@@ -44,9 +44,8 @@ platform owner</p>
                 </div>
                 <div class="border-r">
                     <h2>Gain</h2>
-                    <p class="p-4">Tasks of the partner that the platform helps
-                    to perform. needs of the partner that the
-                    platform helps to meet. </p>
+                    <p class="p-4">positive effects related to the job and need
+                    that are enhanced by the platform </p>
                     <p class="p-6 text-sm"> What benefits or improvements do you expect from using the AI platform?</p>
 
 
