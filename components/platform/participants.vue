@@ -104,11 +104,10 @@
                     <div class="text-xs">Resources</div>        
                 </div>
               
-                <div class="flex flex-row flex-nowrap overflow-auto">
                     <div v-for="j, i in activitiesMap "  class="flex-1 border p-2 rounded-lg m-3 bg-cyan-300">
                         <p > {{ i }}</p><p class="text-lg">{{ j }}x </p>    
                     <div class="text-xs">Activities</div>        
-                </div>
+                
                 </div>
 
             </div>
@@ -256,90 +255,99 @@ for(const jo in activities){
 let jobMap = {};
 
 props.data.forEach(project => {
-  let jobCategory = project.job[0]; // Assuming job is an array and we want the first job
+  project.job.forEach(jobCategory => {// Assuming job is an array and we want the first job
   if (jobMap.hasOwnProperty(jobCategory)) {
     jobMap[jobCategory]++;
   } else {
     jobMap[jobCategory] = 1;
   }
 });
+});
 
 let painMap = {};
 
 props.data.forEach(project => {
-  let painCategory = project.pain[0]; // Assuming job is an array and we want the first job
+  project.pain.forEach(painCategory => { // Assuming job is an array and we want the first job
   if (painMap.hasOwnProperty(painCategory)) {
     painMap[painCategory]++;
   } else {
     painMap[painCategory] = 1;
   }
 });
+});
 
 let gainMap = {};
 
 props.data.forEach(project => {
-  let gainCategory = project.gain[0]; // Assuming job is an array and we want the first job
+  project.gain.forEach(gainCategory => { // Assuming job is an array and we want the first job
   if (gainMap.hasOwnProperty(gainCategory)) {
     gainMap[gainCategory]++;
   } else {
     gainMap[gainCategory] = 1;
   }
 });
+});
 
 let revenueMap = {};
 
 props.data.forEach(project => {
-  let revenueCategory = project.revenue[0]; // Assuming job is an array and we want the first job
+  project.revenue.forEach(revenueCategory => { // Assuming job is an array and we want the first job
   if (revenueMap.hasOwnProperty(revenueCategory)) {
     revenueMap[revenueCategory]++;
   } else {
     revenueMap[revenueCategory] = 1;
   }
 });
+});
 
 let filterMap = {};
 
 props.data.forEach(project => {
-  let filterCategory = project.filter[0]; // Assuming job is an array and we want the first job
+  project.filter.forEach(filterCategory => { // Assuming job is an array and we want the first job
   if (filterMap.hasOwnProperty(filterCategory)) {
     filterMap[filterCategory]++;
   } else {
     filterMap[filterCategory] = 1;
   }
 });
+});
 
 let channelMap = {};
 
 props.data.forEach(project => {
-  let channelCategory = project.channel[0]; // Assuming job is an array and we want the first job
+  project.channel.forEach(channelCategory => { // Assuming job is an array and we want the first job
   if (channelMap.hasOwnProperty(channelCategory)) {
     channelMap[channelCategory]++;
   } else {
     channelMap[channelCategory] = 1;
   }
 });
+});
 
 let resourcesMap = {};
 
 props.data.forEach(project => {
-  let resourcesCategory = project.resources[0]; // Assuming job is an array and we want the first job
-  if (resourcesMap.hasOwnProperty(resourcesCategory)) {
+  project.resources.forEach(resourcesCategory => {
+      if (resourcesMap.hasOwnProperty(resourcesCategory)) {
     resourcesMap[resourcesCategory]++;
   } else {
     resourcesMap[resourcesCategory] = 1;
   }
 });
+});
 
 let activitiesMap = {};
 
 props.data.forEach(project => {
-  let activitiesCategory = project.activities[0]; // Assuming job is an array and we want the first job
-  if (activitiesMap.hasOwnProperty(activitiesCategory)) {
-    activitiesMap[activitiesCategory]++;
-  } else {
-    activitiesMap[activitiesCategory] = 1;
-  }
+  project.activities.forEach(activity => { // Loop through each activity in the project
+    if (activitiesMap.hasOwnProperty(activity)) {
+      activitiesMap[activity]++; // Increment the count if the category already exists
+    } else {
+      activitiesMap[activity] = 1; // Initialize a new category with a count of 1
+    }
+  });
 });
+
 
 
 let readyMap = {};
@@ -347,16 +355,17 @@ let readyMap = {};
 if(ready[0]){
     
 props.data.forEach(project => {
-  let readyCategory = project.readiness[0] ? project.readiness[0] : 0; // Assuming job is an array and we want the first job
+  project.activities.forEach(readyCategory => {
   if (readyMap.hasOwnProperty(readyCategory)) {
     readyMap[readyCategory]++;
   } else {
     readyMap[readyCategory] = 1;
   }
 });
+});
 }
 
-
+console.log("readyMap", activitiesMap)
 
 
 </script>
