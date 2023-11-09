@@ -373,9 +373,29 @@ function mergeRevenueData(...revenueMaps) {
   return Object.values(combinedRevenue);
 }
 
+// Function to merge the revenue data
+function mergeChannelData(...revenueMaps) {
+  const combinedRevenue = {};
+
+  revenueMaps.forEach((revenueMap, index) => {
+    // Determine the type of revenue based on the index
+    const type = ['customer', 'partner', 'supplier'][index];
+    
+    for (const [key, value] of Object.entries(revenueMap)) {
+      if (!combinedRevenue[key]) {
+        combinedRevenue[key] = { category: key, customer: 0, partner: 0, supplier: 0 };
+      }
+      // Assign the value to the correct type
+      combinedRevenue[key][type] = value;
+    }
+  });
+
+  return Object.values(combinedRevenue);
+}
+
 // Now, we merge the data
 const combinedArray = mergeRevenueData(customerRevenue, ownerRevenue, partnerRevenue, supplierRevenue);
-const combinedChannelArray = mergeRevenueData(customerChannel, partnerChannel, supplierChannel);
+const combinedChannelArray = mergeChannelData(customerChannel, partnerChannel, supplierChannel);
 console.log("CA", combinedArray)
 
 
@@ -478,6 +498,8 @@ async function submitComment(comment) {
                 comment: comment       
             },
     });
+
+    com.push({comment: comment})
 }
 
 </script>
