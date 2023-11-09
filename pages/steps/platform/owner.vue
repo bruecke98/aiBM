@@ -339,7 +339,7 @@ const filters = ref([
     'No opinion'
 ])
 const checkedFilters = ref([])
-function addTofilter() {  
+function addToFilter() {  
     filters.value.push(filter.value)
 }
 function changeFilter(filter) {
