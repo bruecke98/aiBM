@@ -62,10 +62,12 @@
 
     const revenue = ref('')
     const revenues = ref([
+        'freemium',
         'subscription', 
         'pay per use',
         'pay per result', 
         'pay per time',  
+        'licensing'
     ])
     const checkedRevenues = ref([])
     function addToRevenues() {
@@ -82,10 +84,11 @@
 
     const cost = ref('')
     const costs = ref([
-        'subscription', 
-        'pay per use',
-        'pay per result', 
-        'pay per time',  
+        'hardware', 
+        'server',
+        'model development',
+        'model training', 
+        'marketing',        
     ])
     const checkedCosts = ref([])
     function addToCosts() {

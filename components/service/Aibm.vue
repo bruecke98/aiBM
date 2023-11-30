@@ -12,9 +12,8 @@
 <script setup lang="ts">
 
 const props = defineProps({
-    name: '',
+    name: String,
     data: [],
-    color: ''
 })
 
 </script>

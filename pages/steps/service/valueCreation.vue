@@ -88,7 +88,8 @@
         'images', 
         'text',
         'audio', 
-        'video',  
+        'video',
+        'numeric'  
     ])
     const checkedDatas = ref([])
     function addToDatas() {
@@ -127,8 +128,10 @@
     const techs = ref([
         'computer vision', 
         'natural language processing',
+        'machine learning',
         'speech recognition', 
         'speech synthesis',  
+        'robotics'
     ])
     const checkedTechs = ref([])
     function addToTechs() {

@@ -87,7 +87,6 @@
         'cloud', 
         'edge',
         'on-premise', 
-        'mobile',  
     ])
     const checkedDeploys = ref([])
     function addToDeploys() {

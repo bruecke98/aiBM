@@ -82,10 +82,12 @@
 
     const value = ref('')
     const values = ref([
-        'easy to use', 
+        'monitoring', 
         'detection',
         'prediction', 
         'classification',  
+        'augmentation',
+        'support'
     ])
     const checkedValues = ref([])
     function addToValues() {
@@ -102,10 +104,10 @@
 
     const data = ref('')
     const datas = ref([
-        'images', 
-        'text',
-        'audio', 
-        'video',  
+        'cost and time reduction', 
+        'quality increase',
+        'insight increase', 
+        'innovation increase',  
     ])
     const checkedPromise = ref([])
     function addToDatas() {
@@ -122,10 +124,12 @@
 
     const activitie = ref('')
     const activities = ref([
-        'data collection', 
-        'data labeling',
-        'data cleaning', 
-        'data augmentation',  
+        'aggregation', 
+        'detection',
+        'optimization', 
+        'forecasting',  
+        'generation',
+        'filtering'
     ])
     const checkedOffering = ref([])
     function addToActivities() {
