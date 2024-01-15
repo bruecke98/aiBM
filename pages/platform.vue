@@ -1,7 +1,76 @@
 <template>
 
-<div class="grid grid-cols-2">
-    
+  <div>
+    <h1> Create new Entry </h1>
+    <h2 class="text-2xl"> in which role do you see yourself? </h2>
+    <div class="grid grid-cols-4 text-xl ">
+      <div class="border rounded-md m-2">
+        <div class="grid grid-cols-3">
+          <div></div>
+          <div><h1 class="text-3xl">Customer</h1></div>
+          <div>
+            <NuxtLink :to="`/steps/platform/customer`" class="mt-4">
+                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            </NuxtLink>
+          </div>
+        </div>
+        <div>
+          An entity or individual who uses the services offered by the platform. They may be emergency management organizations or other entities seeking decision support through AI.
+        </div>
+      </div>
+      <div class="border rounded-md m-2">
+        <div class="grid grid-cols-3">
+          <div></div>
+          <div><h1 class="text-3xl">Owner</h1></div>
+          <div>
+            <NuxtLink :to="`/steps/platform/owner`" class="mt-4">
+                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            </NuxtLink>
+          </div>
+        </div>
+        <div>
+          The group that holds the proprietary rights or has the overarching control and responsibility for the platform.
+        </div>
+      </div>
+       
+      <div class="border rounded-md m-2">
+        <div class="grid grid-cols-3">
+          <div></div>
+          <div><h1 class="text-3xl">Supplier</h1></div>
+          <div>
+            <NuxtLink :to="`/steps/platform/supplier`" class="mt-4">
+                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            </NuxtLink>
+          </div>
+        </div>
+        <div>
+          Refers to entities or individuals providing services, data, or technologies that contribute to the functionality of the platform.
+        </div>
+
+
+      </div>
+      <div class="border rounded-md m-2">
+        <div class="grid grid-cols-3">
+          <div></div>
+          <div><h1 class="text-3xl">Partner</h1></div>
+          <div>
+            <NuxtLink :to="`/steps/platform/partner`" class="mt-4">
+                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            </NuxtLink>
+          </div>
+        </div>
+        <div>
+          Entities or individuals collaborating with the platform, potentially through joint projects, shared resources, or mutual goals in the realm of crisis management and decision support.
+        </div>
+      </div>
+     
+
+    </div>
+  </div>
+
+  <h1 class="mt-20"> SPELL-Business Model </h1>
+<div class="grid grid-cols-2 mt-4">
+     
         <PlatformParticipants :participant="'Customer'" :data="customer"  />
         <PlatformParticipants :participant="'Owner'"  :data="owner"/>
     

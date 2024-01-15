@@ -355,7 +355,7 @@ let readyMap = {};
 if(ready[0]){
     
 props.data.forEach(project => {
-  project.activities.forEach(readyCategory => {
+  project.readiness.forEach(readyCategory => {
   if (readyMap.hasOwnProperty(readyCategory)) {
     readyMap[readyCategory]++;
   } else {

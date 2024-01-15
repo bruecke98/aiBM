@@ -4,7 +4,7 @@
         <!-- Logo -->
             <div>
                 <nuxt-link to="/" class="text-gray-200 text-3xl">
-                    ai-bm
+                    SPELL-Business Model
                 </nuxt-link>
             </div>
             <button @click="findCanvas" class="text-xl text-gray-200">

@@ -1,52 +1,30 @@
 <template>
     <div class=" grid grid-cols-2">
         <div class="p-6 m-6 text-left ml-60 text-2xl">
-            <h1>create</h1>
-            <h1>your own</h1>
-            <h1>or shared</h1>
-            <h1><span class="bg-cyan-200 rounded-lg px-1">ai-based</span> or</h1>
-            <h1><span class="bg-emerald-200 rounded-lg px-1 ">ai-platform</span></h1>
-            <h1>business model</h1>
+            <h1>lets create a</h1>
+            <h1><span class="bg-cyan-200 rounded-lg px-1">business model</span></h1>
+
+            <h1>for</h1>
+            <h1><span class="bg-green-200 rounded-lg px-1">SPELL</span></h1>
+          
         </div>  
-        <div class="text-left text-2xl m-6 p-6">
+        <div class="text-left text-2xl mt-72 m-6 p-6">
             <div class="border-2 p-5 rounded-lg">
-                <h3>existing business model </h3>
+                <h3>work on the SPELL-Business Model </h3>
                     <input 
                         class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
                         type="text"
                         id="projectName"
                         name="projectName"
-                        placeholder="project name"
+                        placeholder="password"
                         required
-                        v-model="existingProjectName"
+                        v-model="password"
                     />      
                     
                     <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3" @click="loadExistingProject">load</button>
             </div>
 
-            <div class="mt-12 border-2 p-5 rounded-lg">
-                <h3>create a new business model </h3>
-                    <!-- <input 
-                        class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
-                        type="text"
-                        id="email"
-                        name="email"
-                        placeholder="Email"
-                        required
-                        v-model="newProjectEmail"
-                    />  -->
-                    <input 
-                        class="mt-6 w-3/4 rounded border border-light-text py-1 px-3"
-                        type="text"
-                        id="projectName"
-                        name="projectName"
-                        placeholder="new project name"
-                        required
-                        v-model="newProjectName"
-                    />      
-                    <button :disabled="takenName" :class="{'border-red-600' : takenName}" class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3" @click="createNewProject">create</button>
-
-            </div>
+            
 
         </div>
     </div>
@@ -60,8 +38,8 @@ const projectNameStore = useProjectNameStore();
 const route = useRoute()
 
 // import { getProject } from '@/api/supabase/getProject';
-
-const existingProjectName = ref('');
+const password = ref('');
+const existingProjectName = ref('sT');
 const existingProjectID = ref(0);
 
 const newProjectName = ref('');
@@ -73,7 +51,7 @@ const loadExistingProject = async () => {
     const { data } = await useFetch(`/api/getProject`);
     // const isTest3Included = data.value.data.some(item => item.projectName === existingProjectName.value.trim()  );
     const isTest3Included = data.value.data.some(item => {
-        if (item.projectName === existingProjectName.value.trim()) {
+        if (password.value === 'abcd') {
             console.log(item); // Accessing the email property of item
             projectNameStore.setProjectName(existingProjectName.value);
             cookie.value = existingProjectName.value;
