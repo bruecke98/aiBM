@@ -9,7 +9,7 @@
             </div>
             <button @click="findCanvas" class="text-xl text-gray-200">
                
-                    {{ name }}
+                Platform 
                 
             </button>
                 
@@ -31,9 +31,7 @@ async function findCanvas() {
         if (item.projectName === cookie.value.trim()) {
             if(item.bm === "platform"){
                 navigateTo("/platform");
-            }else if(item.bm === "service"){
-                navigateTo("/service");
-            }else {
+            }else{
                 navigateTo("/main");
             }
             return true;

@@ -39,7 +39,7 @@ const route = useRoute()
 
 // import { getProject } from '@/api/supabase/getProject';
 const password = ref('');
-const existingProjectName = ref('sT');
+const existingProjectName = ref('');
 const existingProjectID = ref(0);
 
 const newProjectName = ref('');
@@ -52,6 +52,7 @@ const loadExistingProject = async () => {
     // const isTest3Included = data.value.data.some(item => item.projectName === existingProjectName.value.trim()  );
     const isTest3Included = data.value.data.some(item => {
         if (password.value === 'abcd') {
+            existingProjectName.value = 'aiBM';
             console.log(item); // Accessing the email property of item
             projectNameStore.setProjectName(existingProjectName.value);
             cookie.value = existingProjectName.value;

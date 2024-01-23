@@ -5,7 +5,7 @@
 
         <div class="grid grid-cols-3"> 
             <div>
-            <NuxtLink :to="`/steps/platform/${props.participant}`" class="">
+            <NuxtLink :to="`/steps/platform/${props.participant}`" class="" :title="`Add a ${props.participant} to the Business Model`">
                 <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700" />
             </NuxtLink>
             </div>
