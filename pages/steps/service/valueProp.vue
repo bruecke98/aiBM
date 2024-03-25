@@ -149,7 +149,6 @@
 
 
     for (const v in serviceDb.aiValue) {
-        // console.log(tech)
         changeValues(serviceDb.aiValue[v])
     }
     for (const p in serviceDb.promise) {

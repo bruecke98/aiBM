@@ -539,7 +539,6 @@ function changeResources(resource) {
     }
 }
 
-// console.log(checkedResourcesCount.value)
 
 const activitie = ref('')
 const activities = ref([

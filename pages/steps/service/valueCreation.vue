@@ -151,7 +151,6 @@
 
 
     for (const techc in serviceDb.tech) {
-        // console.log(tech)
         changeTechs(serviceDb.tech[techc])
     }
     for (const datac in serviceDb.dataC) {

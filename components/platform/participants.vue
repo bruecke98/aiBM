@@ -159,7 +159,6 @@ const job = props.data.reduce((acc, curr) => {
   return acc
 }, [])
 
-// console.log("props", job)
 
 const pain = props.data.reduce((acc, curr) => {
   acc.push(curr.pain)
@@ -198,7 +197,6 @@ const ready = props.data.reduce((acc, curr) => {
 
 
 
-// console.log(job)
 const job2 = []
 for(const jo in job){
     for (const j in job[jo]){
@@ -385,7 +383,6 @@ props.data.forEach(project => {
 });
 }
 
-console.log("readyMap", activitiesMap)
 
 
 </script>

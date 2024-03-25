@@ -110,7 +110,6 @@
 
 
     for (const r in serviceDb.revenue) {
-        // console.log(tech)
         changeRevenues(serviceDb.revenue[r])
     }
     for (const c in serviceDb.cost) {

@@ -146,7 +146,6 @@
 
 
     for (const d in serviceDb.deployment) {
-        // console.log(tech)
         changeDeploys(serviceDb.deployment[d])
     }
     for (const ch in serviceDb.channels) {

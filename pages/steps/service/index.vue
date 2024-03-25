@@ -73,7 +73,6 @@ function typeBM(type) {
     } else {
         selectArray.value.push(type);
     }
-    console.log(selectArray.value);
 
     switch (type) {
         case 'ai-service':

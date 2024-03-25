@@ -9,7 +9,6 @@ export default defineEventHandler(async (event) => {
   const supabase = createClient(supabaseUrl, supaKey as string)
   const name = event.context.params?.projectName ? event.context.params?.projectName : 0;
 
-  console.log("Name", name,)
   const data = await supabase
       .from('owner')
       .select('*')

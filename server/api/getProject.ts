@@ -11,7 +11,6 @@ export default defineEventHandler(async () => {
       .from('project')
       .select('*')
    
-    console.log(data.data)
   
     return {data: data.data}
   })

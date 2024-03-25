@@ -49,13 +49,11 @@ const takenName = ref(false);
 const { data } = await useFetch(`/api/getProject`);
 
 const loadExistingProject = async () => {
-    console.log(password.value);
     const { data } = await useFetch(`/api/getProject`);
     // const isTest3Included = data.value.data.some(item => item.projectName === existingProjectName.value.trim()  );
     const isTest3Included = data.value.data.some(item => {
         if (password.value === config.public.password) {
             existingProjectName.value = 'SPELL-Platform';
-            console.log(item); // Accessing the email property of item
             projectNameStore.setProjectName(existingProjectName.value);
             cookie.value = existingProjectName.value;
             // setCookie('projectName', existingProjectName.value);
@@ -85,7 +83,6 @@ watch(newProjectName, () => {
         }
         return false;
     });
-    console.log(takenName.value);
 })
 
 const createNewProject = async () => {

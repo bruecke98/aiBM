@@ -15,8 +15,6 @@ export default defineEventHandler(async (event) => {
       .insert([
         { projectName: name},
       ])
-   
-    console.log(data.data)
-  
+     
     return {data: data.data}
   })

@@ -468,7 +468,6 @@ function mergeChannelData(...revenueMaps) {
 // Now, we merge the data
 const combinedArray = mergeRevenueData(customerRevenue, ownerRevenue, partnerRevenue, supplierRevenue);
 const combinedChannelArray = mergeChannelData(customerChannel, partnerChannel, supplierChannel);
-console.log("CA", combinedArray)
 
 
 
@@ -587,11 +586,9 @@ supplier.forEach(project => {
 
 const comDB = await useFetch(`/api/getComments/` + cookie.value);
 const com = comDB.data.value.data
-console.log("DB", com)
 
 
 async function submitComment(comment) {
-    console.log(comment)
     await $fetch('api/setComment',
     {
         method: 'POST',
