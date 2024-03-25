@@ -24,7 +24,7 @@
                             name="editorName"
                             placeholder="Name of Editor"
                             required
-                            v-model="editorName"
+                            v-model="customerName"
                         />
                     </div>  
         </div>
@@ -598,7 +598,7 @@ async function save(){
         method: 'POST',
         body: { projectName: cookie.value, 
                 name: customerName.value,
-                organization: organizationName.value,
+                organization: organizationName.value, //TODO
                 editorPrivacy: privacyOrg.value,
                 orgPrivacy: privacyName.value,
                 jobs: checkedJobs.value,
@@ -614,7 +614,7 @@ async function save(){
             },
     });
 
-    navigateTo("/");
+    navigateTo("/platform");
 }
 
 

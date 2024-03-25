@@ -36,6 +36,7 @@ import { useProjectNameStore } from '~/stores/projectName';
 const cookie = useCookie('projectName');
 const projectNameStore = useProjectNameStore();
 const route = useRoute()
+const config = useRuntimeConfig(); 
 
 // import { getProject } from '@/api/supabase/getProject';
 const password = ref('');
@@ -48,14 +49,16 @@ const takenName = ref(false);
 const { data } = await useFetch(`/api/getProject`);
 
 const loadExistingProject = async () => {
+    console.log(password.value);
     const { data } = await useFetch(`/api/getProject`);
     // const isTest3Included = data.value.data.some(item => item.projectName === existingProjectName.value.trim()  );
     const isTest3Included = data.value.data.some(item => {
-        if (password.value === 'abcd') {
-            existingProjectName.value = 'aiBM';
+        if (password.value === config.public.password) {
+            existingProjectName.value = 'SPELL-Platform';
             console.log(item); // Accessing the email property of item
             projectNameStore.setProjectName(existingProjectName.value);
             cookie.value = existingProjectName.value;
+            // setCookie('projectName', existingProjectName.value);
             if(item.bm === "platform"){
                 navigateTo("/platform");
             }else if(item.bm === "service"){
@@ -65,8 +68,10 @@ const loadExistingProject = async () => {
             }
 
             return true;
+        }else{
+            return false;
         }
-        return false;
+     a
     });
 }
 

@@ -19,6 +19,9 @@ export default defineEventHandler(async (event) => {
         {
           project: body.projectName,
           name: body.name,
+          organization: body.organization,
+          editorPrivacy: body.editorPrivacy,
+          orgPrivacy: body.orgPrivacy,
           job: body.jobs as [],
           pain: body.pains as [],
           gain: body.gains as [],

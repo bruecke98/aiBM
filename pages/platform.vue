@@ -2,15 +2,15 @@
 
   <div>
     <h1> Create new Entry </h1>
-    <h2 class="text-2xl"> in which role do you see yourself? </h2>
-    <div class="grid grid-cols-4 text-xl ">
+    <h2 class="text-2xl mb-2"> in which role do you see yourself? </h2>
+    <div class="grid grid-cols-4 text-xl">
       <div class="border rounded-md m-2 group">
         <div class="grid grid-cols-3">
           <div></div>
-          <div><h1 class="text-3xl">Customer</h1></div>
+          <div><h1 class="text-2xl">Customer</h1></div>
           <div>
-            <NuxtLink :to="`/steps/platform/customer`" class="mt-4" title="Add a Customer to the Business Model">
-                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            <NuxtLink :to="`/steps/customer`" class="mt-4" title="Add a Customer to the Business Model">
+                  <Icon name="material-symbols:add-circle" class="rounded-full group-hover:bg-cyan-300 hover:scale-110 mt-5" />
             </NuxtLink>
           </div>
         </div>
@@ -21,10 +21,10 @@
       <div class="border rounded-md m-2 group">
         <div class="grid grid-cols-3">
           <div></div>
-          <div><h1 class="text-3xl">Owner</h1></div>
+          <div><h1 class="text-2xl">Owner</h1></div>
           <div>
-            <NuxtLink :to="`/steps/platform/owner`" class="mt-4" title="Add a Owner to the Business Model">
-                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            <NuxtLink :to="`/steps/owner`" class="mt-4" title="Add a Owner to the Business Model">
+                  <Icon name="material-symbols:add-circle" class="rounded-full group-hover:bg-cyan-300 hover:scale-110 mt-5" />
             </NuxtLink>
           </div>
         </div>
@@ -36,10 +36,10 @@
       <div class="border rounded-md m-2 group">
         <div class="grid grid-cols-3">
           <div></div>
-          <div><h1 class="text-3xl">Supplier</h1></div>
+          <div><h1 class="text-2xl">Supplier</h1></div>
           <div>
-            <NuxtLink :to="`/steps/platform/supplier`" class="mt-4" title="Add a Supplier to the Business Model">
-                  <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            <NuxtLink :to="`/steps/supplier`" class="mt-4" title="Add a Supplier to the Business Model">
+                  <Icon name="material-symbols:add-circle" class="rounded-full group-hover:bg-cyan-300 hover:scale-110 mt-5" />
             </NuxtLink>
           </div>
         </div>
@@ -52,10 +52,10 @@
       <div class="border rounded-md m-2 group">
         <div class="grid grid-cols-3">
           <div></div>
-          <div><h1 class="text-3xl">Partner</h1></div>
+          <div><h1 class="text-2xl">Partner</h1></div>
           <div>
-            <NuxtLink :to="`/steps/platform/partner`" class="mt-4" title="Add a Partner to the Business Model">
-              <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700 mt-5" />
+            <NuxtLink :to="`/steps/partner`" class="mt-4" title="Add a Partner to the Business Model">
+              <Icon name="material-symbols:add-circle" class="rounded-full group-hover:bg-cyan-300 hover:scale-110 mt-5" />
             </NuxtLink>
           </div>
         </div>
@@ -82,8 +82,9 @@
 <div class="border-4 m-10">
     
 </div>
-<div class="grid grid-cols-2">
-    <div class="border p-3 m-6"> 
+<div class="grid grid-cols-5">
+  <div></div>
+    <div class="border p-3 m-6 col-span-5 md:col-span-3"> 
         <p class="text-xl mb-8">comments</p>
         <div>
             <textarea v-model="comment" placeholder="write a comment..."></textarea>
@@ -95,48 +96,43 @@
             <p class="text-lg">{{ value.comment }}</p>
         </div>
     </div>
-    <div class="border p-3 m-6"> 
-        <p class="text-xl mb-8">sharing</p>
-        <!-- alte Kommentare anzeigen -->
-        <p class="text-lg">share the name of the project, <span class="text-xl bg-cyan-200 p-1 rounded-lg">{{ cookie }}</span> ,with your colleagues </p>
-    </div>
+    
 </div>
 
 <div class="mt-12">
     <h1>Revenue Model</h1>
-    <div class="grid grid-cols-4 w-3/4 justify-items-center mx-auto">
-        <div>
-            <p class="text-xl">Customer</p>
-            <div v-for="(value, key) in customerRevenue" :key="key">
+    <div class="h-96 grid grid-cols-4 w-3/4 justify-items-center mx-auto">
+        <div class="w-4/5">
+            <p class="text-xl mb-4">Customer</p>
+            <!-- <div v-for="(value, key) in customerRevenue" :key="key">
                 <p class="text-lg">{{ value }}x: {{ key }}</p>
-            </div>
+            </div> -->
+            <Doughnut :data="dougnout(customerRevenue)" :options="chartOptions" />
         </div>
-        <div>
-            <p class="text-xl">Owner</p>
-            <div v-for="(value, key) in ownerRevenue" :key="key">
-                <p class="text-lg">{{ value }}x: {{ key }}</p>
-            </div>
-        </div>
-        <div>
-            <p class="text-xl">Partner</p>
-            <div v-for="(value, key) in partnerRevenue" :key="key">
-                <p class="text-lg">{{ value }}x: {{ key }}</p>
-            </div>
-        </div>
-        <div>
-            <p class="text-xl">Supplier</p>
-            <div v-for="(value, key) in supplierRevenue" :key="key">
-                <p class="text-lg">{{ value }}x: {{ key }}</p>
-            </div>
-        </div>
+        <div class="w-4/5">
+            <p class="text-xl mb-4">Owner</p>
+           
+            <Doughnut :data="dougnout(ownerRevenue)" :options="chartOptions" />
 
-    </div>
+        </div>
+        <div class="w-4/5">
+            <p class="text-xl mb-4">Partner</p>
+         
+            <Doughnut :data="dougnout(ownerRevenue)" :options="chartOptions" />
+
+        </div>
+        <div class="w-4/5">
+            <p class="text-xl mb-4">Supplier</p>
+        
+            <Doughnut :data="dougnout(supplierRevenue)" :options="chartOptions" />    
+                </div>
+          </div>
 </div>
 
 <div class="mt-12">
     <h1>Channel</h1>
     <div class="grid grid-cols-3 w-3/4 justify-items-center mx-auto">
-        <div>
+        <div >
             <p class="text-xl">Customer</p>
             <div v-for="(value, key) in customerChannel" :key="key">
                 <p class="text-lg">{{ value }}x: {{ key }}</p>
@@ -231,6 +227,10 @@
   <h2 class="mt-16 text-lg"> Channel </h2>
     <Bar :data="channelData" class="mx-auto w-3/5" />
 
+  <!-- <h2 class="mt-16 text-lg"> Channel </h2>
+    <Doughnut :data="testData" class="mx-auto w-3/5" /> -->
+
+
 
 </div>
 
@@ -239,8 +239,11 @@
 
 <script setup>
 import { Bar } from 'vue-chartjs'
-import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, LinearScale, LineElement, PointElement, LineController, CategoryScale } from 'chart.js'
-ChartJS.register(Title, Tooltip, Legend, BarElement, LinearScale, LineElement, PointElement, LineController, CategoryScale)
+import { Chart as ChartJS,ArcElement, Title, Tooltip, Legend, BarElement, LinearScale, LineElement, PointElement, LineController, CategoryScale,  } from 'chart.js'
+
+import { Doughnut } from 'vue-chartjs'
+
+ChartJS.register(Title, Tooltip, Legend, ArcElement, BarElement, LinearScale, LineElement, PointElement, LineController, CategoryScale )
 
 
 
@@ -514,6 +517,35 @@ const channelData = {
 ]
 }
 
+function dougnout(data){
+  return {
+    labels: Object.keys(data),
+    datasets: [{
+      label: '',
+      data: Object.values(data),
+      backgroundColor: [
+        '#72f542',
+        '#42f5ad',
+        '#42c5f5',
+        '#427ef5',
+        '#9042f5',
+        '#f57242',
+        '#f5ce42'
+
+      ],
+      hoverOffset: 4
+    }]
+  
+}
+}
+
+const chartOptions = {
+  plugins: {
+    legend: {
+      position: 'bottom'
+    }
+  }
+};
 
 const customerFilter = {};
 

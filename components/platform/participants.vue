@@ -5,7 +5,7 @@
 
         <div class="grid grid-cols-3"> 
             <div>
-            <NuxtLink :to="`/steps/platform/${props.participant}`" class="" :title="`Add a ${props.participant} to the Business Model`">
+            <NuxtLink :to="`/steps/${props.participant.toLowerCase()}`" class="" :title="`Add a ${props.participant} to the Business Model`">
                 <Icon name="material-symbols:add-circle" class="rounded-full hover:bg-cyan-700" />
             </NuxtLink>
             </div>
@@ -15,6 +15,9 @@
                     <Icon v-else name="material-symbols:arrow-drop-up" />
                 </button>
             </div>
+            <div class="text-xl">
+              {{ props.data.length }}x
+            </div>
             <div>
             
             </div>
@@ -22,7 +25,9 @@
         <div class="mt-2">
             <div class="flex flex-row flex-nowrap overflow-auto">
                 <div v-for="p in name"  class="flex-1 border p-2 rounded-lg m-3 bg-slate-200">
- {{ p }}      
+                  <span v-if="editorPrivacy[name.indexOf(p)]==='yes'">{{ p }}, </span>
+                  <span v-if="orgPrivacy[name.indexOf(p)]==='yes'">{{ organization[name.indexOf(p)] }} </span>
+                  
                 </div>
                
 
@@ -131,6 +136,21 @@ const props = defineProps({
 
 const name =  props.data.reduce((acc, curr) => {
   acc.push(curr.name )
+  return acc
+}, [])
+
+const organization =  props.data.reduce((acc, curr) => {
+  acc.push(curr.organization )
+  return acc
+}, [])
+
+const editorPrivacy =  props.data.reduce((acc, curr) => {
+  acc.push(curr.editorPrivacy )
+  return acc
+}, [])
+
+const orgPrivacy =  props.data.reduce((acc, curr) => {
+  acc.push(curr.orgPrivacy )
   return acc
 }, [])
 

@@ -24,6 +24,6 @@ cookie.value = '';
 <style>
 @font-face {
   font-family: 'SpaceG';
-  src: url('./assets/font/RobotoSerif-VariableFont_GRAD,opsz,wdth,wght.ttf');
+  src: url('./assets/font/SpaceGrotesk-VariableFont_wght.ttf');
 }
 </style>
