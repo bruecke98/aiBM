@@ -12,18 +12,77 @@
                 <input class="mt-6 w-3/4 rounded border border-light-text py-1 px-3" type="text" id="projectName"
                     name="projectName" placeholder="password" required v-model="password" />
 
-                <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3"
+                <button class="ml-6 mt-6 mx-auto rounded border border-light-text py-1 px-3 bg-cyan-100 hover:bg-cyan-400 transition-colors"
                     @click="loadExistingProject">load</button>
             </div>
         </div>
     </div>
 
     <Explanation />
+
+    <!-- <div>
+        <div class="mt-40">
+            <button @click="getPrice" class="p-2 rounded-lg border-2"> Get Price </button>
+        </div>
+        <div>
+            Price: {{ price }}
+        </div>
+        <div>
+            Differenz zwischen den letzen zwei Clicks: <span :class="priceDiff<0 ? 'text-red-900' :'text-black'"> {{priceDiff}} </span>
+        </div>  
+    </div> -->
+
+
 </template>
 
 <script setup lang >
 // import { NuxtLink } from '#build/components';
 import { useProjectNameStore } from '~/stores/projectName';
+
+// const price = ref(0);
+// const lastPrice = ref(0);
+// const priceDiff = ref(0);
+// const i = ref(true);
+// async function getPrice() {
+//     // fetch data with api
+//     const { data: count } = await useFetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT' )
+//     // console.log(count)
+//     price.value = count.value.price
+//     if(i.value){
+//         lastPrice.value = count.value.price
+//         i.value = false
+//     }else{  
+//         priceDiff.value = Math.round((count.value.price - lastPrice.value) * 100 ) /100
+//         lastPrice.value = count.value.price
+//     }
+
+//     // set price
+// }
+
+
+// const array = ["ETHBTC", "MCOBNB", "LTCBTC", "EOSETH", "BCCBTC", "POABNB", "IOTAETH", "ETCETH", "BTTUSDT", "STORJETH", "CDTBTC"];
+
+// const result = array.map((str, index) => {
+//   return {
+//     index: index,
+//     value: str.split('').filter(char => char.toLowerCase() === 't').join('')
+//   };
+// });
+
+// const sortedArray = result.sort((a, b) =>  b.value.length - a.value.length);
+
+// const rearrangedArray = sortedArray.map(item => array[item.index]);
+
+// console.log(rearrangedArray)
+
+
+
+
+
+
+
+
+
 const cookie = useCookie('projectName');
 const projectNameStore = useProjectNameStore();
 const route = useRoute()
