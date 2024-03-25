@@ -19,7 +19,7 @@ export default defineNuxtConfig({
     ],
     runtimeConfig: {
         private: {
-            supabaseKey: process.env.SUPABASE_KEY,
+            supabaseKey: process.env.SUPABASE_ANON_KEY,
             stripePK: process.env.STRIPE_PK,
         },
         public: {
