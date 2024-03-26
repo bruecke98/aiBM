@@ -329,8 +329,8 @@
 
         <div v-if="showButtonCreation" class="mt-12">
             <button @click="save" class="text-2xl p-2 rounded-lg transition ease-in-out delay-150 bg-green-500 hover:-translate-y-1 hover:text-white hover:scale-110 hover:bg-green-400 duration-300">
-             {{ cookie}}
-             save
+             
+             SPELL-Platform save
             </button>        
         </div>
 

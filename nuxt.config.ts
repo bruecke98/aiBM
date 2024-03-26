@@ -34,4 +34,14 @@ export default defineNuxtConfig({
           ['defineStore', 'definePiniaStore'], // import { defineStore as definePiniaStore } from 'pinia'
         ],
     },
+    app: {
+        head: {
+          title: 'SPELL - Business Model',
+          link: [
+            { rel: 'icon', type: 'image/png', href: '/favicon.png' },
+          ],
+        },
+    },
+
+    
 })

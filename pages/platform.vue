@@ -222,10 +222,10 @@
 <div class="mt-16">
   <h1> Charts </h1>
   <h2 class="text-lg"> Revenue </h2>
-    <Bar :data="revenueData" class="mx-auto w-3/5" />
+    <Bar :data="revenueData" :options="barOptions" class="mx-auto w-3/5" />
 
   <h2 class="mt-16 text-lg"> Channel </h2>
-    <Bar :data="channelData" class="mx-auto w-3/5" />
+    <Bar :data="channelData" :options="barOptions" class="mx-auto w-3/5" />
 
   <!-- <h2 class="mt-16 text-lg"> Channel </h2>
     <Doughnut :data="testData" class="mx-auto w-3/5" /> -->
@@ -545,6 +545,21 @@ const chartOptions = {
     }
   }
 };
+
+const barOptions ={
+  scales:{
+    x:{
+      grid:{
+        display: false
+      }
+    },
+    y:{
+      grid:{
+        display: false
+      }
+    }
+  }
+}
 
 const customerFilter = {};
 

@@ -1,12 +1,12 @@
 <template>
-    <div class=" grid grid-cols-2">
-        <div class="p-6 m-6 text-left ml-60 text-2xl">
+    <div class="xl:grid grid-cols-2">
+        <div class="p-6 m-6 xl:text-left xl:ml-32 2xl:ml-60 md:text-xl xl:text-2xl">
             <h1>lets create a</h1>
             <h1><span class="bg-cyan-200 rounded-lg px-1">business model</span></h1>
             <h1>for</h1>
             <h1><span class="bg-green-200 rounded-lg px-1">SPELL</span></h1>
         </div>
-        <div class="text-left text-2xl mt-40 m-6 p-6">
+        <div class="text-left text-2xl mt-16 xl:mt-40 m-6 p-6">
             <div class="border-2 p-5 rounded-lg">
                 <h3>work on the SPELL-Business Model </h3>
                 <input class="mt-6 w-3/4 rounded border border-light-text py-1 px-3" type="text" id="projectName"
@@ -18,19 +18,10 @@
         </div>
     </div>
 
+    <!-- <button @click="newProject"> new Project </button> -->
+
     <Explanation />
 
-    <!-- <div>
-        <div class="mt-40">
-            <button @click="getPrice" class="p-2 rounded-lg border-2"> Get Price </button>
-        </div>
-        <div>
-            Price: {{ price }}
-        </div>
-        <div>
-            Differenz zwischen den letzen zwei Clicks: <span :class="priceDiff<0 ? 'text-red-900' :'text-black'"> {{priceDiff}} </span>
-        </div>  
-    </div> -->
 
 
 </template>
@@ -38,50 +29,6 @@
 <script setup lang >
 // import { NuxtLink } from '#build/components';
 import { useProjectNameStore } from '~/stores/projectName';
-
-// const price = ref(0);
-// const lastPrice = ref(0);
-// const priceDiff = ref(0);
-// const i = ref(true);
-// async function getPrice() {
-//     // fetch data with api
-//     const { data: count } = await useFetch('https://api.binance.com/api/v3/ticker/price?symbol=BTCUSDT' )
-//     // console.log(count)
-//     price.value = count.value.price
-//     if(i.value){
-//         lastPrice.value = count.value.price
-//         i.value = false
-//     }else{  
-//         priceDiff.value = Math.round((count.value.price - lastPrice.value) * 100 ) /100
-//         lastPrice.value = count.value.price
-//     }
-
-//     // set price
-// }
-
-
-// const array = ["ETHBTC", "MCOBNB", "LTCBTC", "EOSETH", "BCCBTC", "POABNB", "IOTAETH", "ETCETH", "BTTUSDT", "STORJETH", "CDTBTC"];
-
-// const result = array.map((str, index) => {
-//   return {
-//     index: index,
-//     value: str.split('').filter(char => char.toLowerCase() === 't').join('')
-//   };
-// });
-
-// const sortedArray = result.sort((a, b) =>  b.value.length - a.value.length);
-
-// const rearrangedArray = sortedArray.map(item => array[item.index]);
-
-// console.log(rearrangedArray)
-
-
-
-
-
-
-
-
 
 const cookie = useCookie('projectName');
 const projectNameStore = useProjectNameStore();
@@ -103,7 +50,7 @@ const loadExistingProject = async () => {
     // const isTest3Included = data.value.data.some(item => item.projectName === existingProjectName.value.trim()  );
     const isTest3Included = data.value.data.some(item => {
         if (password.value === config.public.password) {
-            existingProjectName.value = 'SPELL-Platform';
+            existingProjectName.value = 'SPELL-BM';
             projectNameStore.setProjectName(existingProjectName.value);
             cookie.value = existingProjectName.value;
             // setCookie('projectName', existingProjectName.value);
@@ -142,6 +89,13 @@ const createNewProject = async () => {
   cookie.value = newProjectName.value;
   navigateTo("/main");
 };
+
+const newProject = () => {
+  // Check if the project name is already taken
+  newProjectName.value = 'SPELL-BM';
+  createNewProject();
+};  
+
 
 
 

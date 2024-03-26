@@ -1,5 +1,5 @@
 <template>
-    <div class="mt-96">
+    <div class="mt-36">
         <h2 class="text-xs">Paul Brückmann </h2>
         <slot></slot>
     </div>

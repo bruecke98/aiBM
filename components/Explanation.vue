@@ -7,7 +7,7 @@
         <p class="text-lg mb-4"> Identify the role that best describes your association with the SPELL-Platform. You
             could be a Supplier, Customer, Owner, or Partner. More details on these roles will be provided subsequently.
             Click the
-            <Icon name="material-symbols:add-circle" class="mb-1" size="24px" /> button to get to the questionaare.
+            <Icon name="material-symbols:add-circle" class="mb-1" size="24px" /> button to get to the questionnaire.
         </p>
         <h2 class="text-2xl p-2"> 3. Step </h2>
         <p class="text-lg mb-4"> Follow the Step-by-Step Questionairre. Complete the step-by-step questionnaire to the
