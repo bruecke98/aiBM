@@ -3,7 +3,7 @@
   <div>
     <h1> Create new Entry </h1>
     <h2 class="text-2xl mb-2"> in which role do you see yourself? </h2>
-    <div class="grid grid-cols-4 text-xl">
+    <div class="md:grid md:grid-cols-4 text-xl">
       <div class="border rounded-md m-2 group">
         <div class="grid grid-cols-3">
           <div></div>
@@ -69,7 +69,7 @@
   </div>
 
   <h1 class="mt-20"> SPELL-Business Model </h1>
-<div class="grid grid-cols-2 mt-4">
+<div class="md:grid md:grid-cols-2 mt-4">
      
         <PlatformParticipants :participant="'Customer'" :data="customer"  />
         <PlatformParticipants :participant="'Owner'"  :data="owner"/>
