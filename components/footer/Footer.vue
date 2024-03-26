@@ -1,6 +1,6 @@
 <template>
     <div class="mt-36">
-        <h2 class="text-xs">Paul Brückmann </h2>
+        <h2 class="text-xs">TU Darmstadt - Paul Brückmann </h2>
         <slot></slot>
     </div>
 </template>
