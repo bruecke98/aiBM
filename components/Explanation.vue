@@ -1,6 +1,6 @@
 <template>
     <div class="w-1/2 mx-auto mt-24 ">
-        <h1> Explanation </h1>
+        <h1 class="text-3xl"> Explanation </h1>
         <h2 class="text-2xl p-2"> 1. Step </h2>
         <p class="text-lg mb-4"> First, log in using the password you received in the email. </p>
         <h2 class="text-2xl p-2"> 2. Step </h2>
