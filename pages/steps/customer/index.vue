@@ -1,11 +1,11 @@
 <template>
     <div>
         <div>
-        <h1>Customer </h1>
+        <h1 class="text-3xl">Customer </h1>
         <p class="text-lg mb-4">the platform buyer, user, consumer</p>
 <div>   
             <input 
-                            class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
+                            class="w-3/4 md:w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                             type="text"
                             id="projectName"
                             name="projectName"
@@ -18,7 +18,7 @@
 </div>
 <div>
                         <input 
-                            class="mt-12 w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
+                            class="mt-12 w-3/4 md:w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                             type="text"
                             id="editorName"
                             name="editorName"
@@ -51,7 +51,7 @@
 
 
         <div v-if="showValueProp" class="mt-12">
-            <h1>Value Proposition </h1>
+            <h1 class="text-2xl">Value Proposition </h1>
             <div class="md:grid md:grid-cols-3">
                 <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl mt-12 md:mt-2">Job</h2>
@@ -138,7 +138,7 @@
         </div>
 
         <div v-if="showValueCapture" class="mt-12">
-            <h1>Value Capture </h1>
+            <h1 class="text-2xl">Value Capture </h1>
             <div class="md:grid md:grid-cols-2">
                 <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Revenue Model</h2>
@@ -208,7 +208,7 @@
         </div>
 
         <div v-if="showValueDelivery" class="mt-12">
-            <h1>Value Delivery </h1>
+            <h1 class="text-2xl">Value Delivery </h1>
             <div class="md:grid md:grid-cols-2">
                 <div class="md:border-r border-b py-8 md:py-0">
                     
@@ -275,7 +275,7 @@
         </div>
 
         <div v-if="showValueCreation" class="mt-12">
-            <h1>Value Creation </h1>
+            <h1 class="text-2xl">Value Creation </h1>
             <div class="md:grid md:grid-cols-2">
                 
                 <div class="md:border-r border-b py-8 md:py-0">

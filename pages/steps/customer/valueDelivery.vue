@@ -1,14 +1,14 @@
 <template>
     <div>
         <div>
-        <h1>Customer </h1>
+        <h1 class="text-2xl">Customer </h1>
         <p class="text-lg mb-4">the platform buyer, user, consumer</p>
 
             
         </div>
         
         <div class="mt-12">
-            <h1>Value Delivery </h1>
+            <h1 class="text-2xl">Value Delivery </h1>
             <div class="grid grid-cols-2">
                 <div class="border-r">
                     

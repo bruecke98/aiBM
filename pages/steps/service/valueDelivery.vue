@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mt-12">
-                <h1>value delivery </h1>
+                <h1 class="text-2xl">value delivery </h1>
                 <div class="grid grid-cols-3">
                     <div class="border-r">
                        

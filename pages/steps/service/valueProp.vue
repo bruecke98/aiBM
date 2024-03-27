@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mt-12">
-                <h1>value proposition </h1> {{ projectNameStore.projectName  }}
+                <h1 class="text-2xl">value proposition </h1> {{ projectNameStore.projectName  }}
                 <div class="grid grid-cols-3">
                     <div class="border-r">
                        

@@ -1,7 +1,7 @@
 <template>
 
   <div>
-    <h1> Create new Entry </h1>
+    <h1 class="text-3xl"> Create new Entry </h1>
     <h2 class="text-2xl mb-2"> in which role do you see yourself? </h2>
     <div class="md:grid md:grid-cols-4 text-xl">
       <div class="border rounded-md m-2 group">
@@ -68,7 +68,7 @@
     </div>
   </div>
 
-  <h1 class="mt-20"> SPELL-Business Model </h1>
+  <h1 class="mt-20 text-3xl"> SPELL-Business Model </h1>
 <div class="md:grid md:grid-cols-2 mt-4">
      
         <PlatformParticipants :participant="'Customer'" :data="customer"  />
@@ -87,8 +87,8 @@
     <div class="border p-3 m-6 col-span-5 md:col-span-3"> 
         <p class="text-xl mb-8">comments</p>
         <div>
-            <textarea v-model="comment" placeholder="write a comment..."></textarea>
-            <button class="border p-1 rounded m-2 hover:bg-cyan-100" @click="submitComment(comment)">Submit</button>
+            <textarea class="border-2 p-2 rounded-lg border-cyan-200" v-model="comment" placeholder="write a comment..."></textarea>
+            <button class="border p-1 rounded m-2 bg-cyan-100 hover:bg-cyan-500" @click="submitComment(comment)">Submit</button>
         </div>
 
         <!-- alte Kommentare anzeigen -->
@@ -100,8 +100,8 @@
 </div>
 
 <div class="mt-12">
-    <h1>Revenue Model</h1>
-    <div class="h-96 grid grid-cols-4 w-3/4 justify-items-center mx-auto">
+    <h1 class="text-2xl">Revenue Model</h1>
+    <div class="h-96 grid grid-cols-2 md:grid-cols-4 w-3/4 justify-items-center mx-auto">
         <div class="w-4/5">
             <p class="text-xl mb-4">Customer</p>
             <!-- <div v-for="(value, key) in customerRevenue" :key="key">
@@ -130,8 +130,8 @@
 </div>
 
 <div class="mt-12">
-    <h1>Channel</h1>
-    <div class="grid grid-cols-3 w-3/4 justify-items-center mx-auto">
+    <h1 class="text-2xl">Channel</h1>
+    <div class="grid md:grid-cols-3 w-3/4 justify-items-center mx-auto">
         <div >
             <p class="text-xl">Customer</p>
             <div v-for="(value, key) in customerChannel" :key="key">
@@ -162,8 +162,8 @@
 
 
 <div class="mt-12">
-    <h1>Resources</h1>
-    <div class="grid grid-cols-4 w-3/4 justify-items-center mx-auto">
+    <h1 class="text-2xl">Resources</h1>
+    <div class="grid md:grid-cols-4 w-3/4 justify-items-center mx-auto">
         <div>
             <p class="text-xl">Customer</p>
             <div v-for="(value, key) in customerResources" :key="key">
@@ -193,8 +193,8 @@
 </div>
 
 <div class="mt-12">
-    <h1>Filter</h1>
-    <div class="grid grid-cols-3 w-3/4 justify-items-center mx-auto">
+    <h1 class="text-2xl">Filter</h1>
+    <div class="grid md:grid-cols-3 w-3/4 justify-items-center mx-auto">
         <div>
             <p class="text-xl">Customer</p>
             <div v-for="(value, key) in customerFilter" :key="key">
@@ -220,12 +220,12 @@
 
 
 <div class="mt-16">
-  <h1> Charts </h1>
+  <h1 class="text-2xl"> Charts </h1>
   <h2 class="text-lg"> Revenue </h2>
-    <Bar :data="revenueData" :options="barOptions" class="mx-auto w-3/5" />
+    <Bar :data="revenueData" :options="barOptions" class="mx-auto w-4/5 md:w-3/5" />
 
   <h2 class="mt-16 text-lg"> Channel </h2>
-    <Bar :data="channelData" :options="barOptions" class="mx-auto w-3/5" />
+    <Bar :data="channelData" :options="barOptions" class="mx-auto w-4/5 md:w-3/5" />
 
   <!-- <h2 class="mt-16 text-lg"> Channel </h2>
     <Doughnut :data="testData" class="mx-auto w-3/5" /> -->

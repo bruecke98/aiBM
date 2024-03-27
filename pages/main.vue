@@ -3,7 +3,7 @@
     <div class="grid grid-cols-2">
      
         <div class="col-span-1 border-2 border-gray-500 rounded-lg m-6 p-6">
-            <h1>ai-service or product</h1>
+            <h1 class="text-2xl">ai-service or product</h1>
             
             <div class="text-xl">
               <img src="../assets/img/service.png" alt="service" class="w-1/2 mx-auto">
@@ -35,7 +35,7 @@
             </button>
         </div>
         <div class="col-span-1 border-2 border-gray-500 rounded-lg m-6 p-6">
-            <h1>ai-platform</h1>
+            <h1 class="text-2xl">ai-platform</h1>
             <div class="text-xl">
               <img src="../assets/img/platform.png" alt="service" class="w-1/2 mx-auto">
 

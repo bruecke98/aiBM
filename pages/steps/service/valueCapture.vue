@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="mt-12">
-                <h1>value capture </h1>
+                <h1 class="text-2xl">value capture </h1>
                 <div class="grid grid-cols-2">
                     <div class="border-r">
                        

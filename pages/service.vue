@@ -1,5 +1,5 @@
 <template>
-<h1>{{ service.name }}</h1>
+<h1 class="text-2xl">{{ service.name }}</h1>
 <h2>{{ service.description }}</h2>
 <div class="grid grid-cols-3"> 
     

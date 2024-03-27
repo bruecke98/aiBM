@@ -1,7 +1,7 @@
 <template>
 <div>
     <div>
-        <h1>Name </h1>
+        <h1 class="text-2xl">Name </h1>
             <input 
                 class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                 type="text"
@@ -13,7 +13,7 @@
                 />  
     </div>
     <div>
-        <h1>Description </h1>
+        <h1 class="text-2xl">Description </h1>
             <input 
                 class=" w-1/4 rounded border-2 border-cyan-500 py-1 px-3"
                 type="text"
@@ -25,7 +25,7 @@
                 />  
     </div>
     <div class="mt-12">
-            <h1>Type </h1>
+            <h1 class="text-2xl">Type </h1>
             <div class="grid grid-cols-3 ">
                 <div class="border-r p-4 m-4 rounded-lg  "  
                      :class="{'bg-green-100' : serviceBg}">
