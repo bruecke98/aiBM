@@ -1,10 +1,10 @@
 <template>
     <div class="xl:grid grid-cols-2">
         <div class="p-6 m-6 xl:text-left xl:ml-32 2xl:ml-60 md:text-xl xl:text-2xl">
-            <h1>lets create a</h1>
-            <h1><span class="bg-cyan-200 rounded-lg px-1">business model</span></h1>
-            <h1>for</h1>
-            <h1><span class="bg-green-200 rounded-lg px-1">SPELL</span></h1>
+            <h1 class="text-3xl">lets create a</h1>
+            <h1 class="text-4xl"><span class="bg-cyan-200 rounded-lg px-1">business model</span></h1>
+            <h1 class="text-3xl">for</h1>
+            <h1 class="text-4xl"><span class="bg-green-200 rounded-lg px-1">SPELL</span></h1>
         </div>
         <div class="text-left text-2xl mt-16 xl:mt-40 m-6 p-6">
             <div class="border-2 p-5 rounded-lg">

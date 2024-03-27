@@ -52,8 +52,8 @@
 
         <div v-if="showValueProp" class="mt-12">
             <h1>Value Proposition </h1>
-            <div class="grid grid-cols-3">
-                <div class="border-r">
+            <div class="md:grid md:grid-cols-3">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Job</h2>
                     <p class="p-4">Tasks of the user that the platform
                     helps to perform. Needs of the user
@@ -79,7 +79,7 @@
                     </div>
                    
                 </div>
-                <div class="border-r">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Gain</h2>
                     <p class="p-4">Positive effects related to the job
                     and need that are enhanced by the
@@ -101,7 +101,7 @@
                     </div>
                    
                 </div>
-                <div class="border-r">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Pain</h2>
                     <p class="p-4">Problems, dangers and barriers,
                         related to the job done or the need
@@ -139,8 +139,8 @@
 
         <div v-if="showValueCapture" class="mt-12">
             <h1>Value Capture </h1>
-            <div class="grid grid-cols-2">
-                <div class="border-r">
+            <div class="md:grid md:grid-cols-2">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Revenue Model</h2>
                     <p class="p-4">
                         The revenue model dimension depicts how the BM generates revenue in order to cover costs and
@@ -167,7 +167,7 @@
                 </div>
               
                 
-                <div class="border-r">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Filter</h2>
                     <p class="p-4">
                         The removal of access barriers, as
@@ -209,8 +209,8 @@
 
         <div v-if="showValueDelivery" class="mt-12">
             <h1>Value Delivery </h1>
-            <div class="grid grid-cols-2">
-                <div class="border-r">
+            <div class="md:grid md:grid-cols-2">
+                <div class="md:border-r border-b py-8 md:py-0">
                     
                     <div class="border-r">
                     <h2 class="text-xl">Channel</h2>
@@ -235,7 +235,7 @@
                 </div>
 
                 <div class="grid">
-                <div class="border-r">
+                <div class="md:border-r border-b py-8 md:py-0">
                     
                     <div class="border-r">
                     <h2 class="text-xl">Organization readiness</h2>
@@ -276,9 +276,9 @@
 
         <div v-if="showValueCreation" class="mt-12">
             <h1>Value Creation </h1>
-            <div class="grid grid-cols-2">
+            <div class="md:grid md:grid-cols-2">
                 
-                <div class="border-r">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Resources</h2>
                     <p class="p-4"> Resources, knowhow, expertise,
                     technology that users must invest,
@@ -301,7 +301,7 @@
  
                 </div>
               
-                <div class="border-r">
+                <div class="md:border-r border-b py-8 md:py-0">
                     <h2 class="text-xl">Activities</h2>
                     <p class="p-4">Key activities that users perform on
                     a platform to finish job or meet
